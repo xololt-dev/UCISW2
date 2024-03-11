@@ -1,0 +1,12 @@
+# Folders
+xst/
+iseconfig/
+_xmsgs/
+
+# Files
+*.ngc
+*.xst
+*.stx
+*.prj
+*.jhd
+*.html
