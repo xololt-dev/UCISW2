@@ -1,5 +1,0 @@
-set -tmpdir "/home/xololt/Desktop/UCISW2/OdtwarzaczWAV/xst/projnav.tmp"
-set -xsthdpdir "/home/xololt/Desktop/UCISW2/OdtwarzaczWAV/xst"
-elaborate
--ifn naszregister.prj
--ifmt mixed
