@@ -1,0 +1,8 @@
+V3 3
+FL /home/xololt/Desktop/UCISW2/OdtwarzaczWAV/register.vhd 2024/03/10.23:02:00 P.20131013
+EN work/naszregister 1710108125 \
+      FL /home/xololt/Desktop/UCISW2/OdtwarzaczWAV/register.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181
+AR work/naszregister/Behavioral 1710108126 \
+      FL /home/xololt/Desktop/UCISW2/OdtwarzaczWAV/register.vhd \
+      EN work/naszregister 1710108125
