@@ -97,7 +97,7 @@
         </instance>
         <instance x="624" y="912" name="XLXI_2" orien="R0">
         </instance>
-        <instance x="1952" y="704" name="XLXI_3" orien="R0">
+        <instance x="1856" y="976" name="XLXI_3" orien="R0">
         </instance>
     </sheet>
 </drawing>

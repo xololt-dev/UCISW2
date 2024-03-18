@@ -32,72 +32,123 @@ use IEEE.NUMERIC_STD.ALL;
 entity naszregister is
     Port ( DO : in  STD_LOGIC_VECTOR (7 downto 0);
            DO_Rdy : in  STD_LOGIC;
+			  Busy : in STD_LOGIC;
+			  Start : in STD_LOGIC;
            Reset : in  STD_LOGIC;
            Clk_50MHz : in  STD_LOGIC;
+			  Pop : out std_logic;
            Line : out  STD_LOGIC_VECTOR (63 downto 0));
 end naszregister;
 
 architecture Behavioral of naszregister is
-	signal inside : std_logic_vector (2815 downto 0); -- 44B * 8b
-	signal readBool : std_logic;
-	signal counter : integer := 0; --std_logic_vector(5 downto 0);
-	-- signal int : integer;
+	type stateType is (IDLE, START_READ, CANAL, SAMPLE, BITS, PLAY, PLAY_END);
+	signal state, nextState : stateType;
+	
+	signal incremented : std_logic := '0';
+	-- signal inside : std_logic_vector (2815 downto 0); -- 44B * 8b
+	signal counter : unsigned (63 downto 0) := (others => '0');-- integer := 0; --std_logic_vector(5 downto 0);
 	
 begin
 	process1 : process(Clk_50MHz)
 	begin
 		if rising_edge(Clk_50MHz) then
 			if Reset = '1' then
-				readBool <= '0';
-				counter <= 0; -- (others => '0');
-				inside <= (others => '0');
+				state <= IDLE;
+				counter <= (others => '0');
+				incremented <= '0';
 			else
-				readBool <= '1';
-				counter <= counter + 1;
+				if Start = '1' then
+					state <= nextState;						
+					if DO_Rdy = '1' and incremented = '0' then
+						counter <= counter + 1;
+						incremented <= '1';
+					else
+						incremented <= '0';
+					end if;
+				end if;
 			end if;
 		end if;
 	end process process1;
 	
-	process2 : process(readBool, DO, DO_Rdy)
-		variable channels : integer;
-		variable sampleRate : integer;
-		-- variable sampleRate_vector : std_logic_vector(15 downto 0);
-		variable bitsPerSample : integer;
+	process2 : process(state, DO, DO_Rdy, Busy)
 	begin
-		if readBool <= '1' and counter <= 44 then
-			inside(((counter - 1) * 8 + 7) downto (counter - 1) * 0) <= DO(7 downto 0); 
-		end if;
-		-- if counter = X"17" then -- channels						counter = X"16" or
-			-- save to vector and shift
-			-- inside(7 downto 0) <= DO(7 downto 0);
-		-- elsif counter >= X"18" and counter < X"1C" then -- sampleRate
-			-- save to vector and shift
-			--for i in 1 to 4 loop
-				--inside(7+i*8 downto 8*i) <= DO(7 downto 0); -- itd			
-			--end loop;
-		--elsif counter = X"22" or counter = X"23" then -- bitsPerSample
-			-- save to vector and shift
-		-- end if;
-	-- end process process2;
+	nextState <= state;
 	
-	-- process3 : process(counter)
+	case state is
+		when IDLE =>
+			if Busy = '1' then
+				nextState <= START_READ;
+			end if;
 		
-	-- begin
-		if counter > 44 then
-			-- TODO: we need to calc it and display properly
-			channels := to_integer(unsigned(inside(23*8+7 downto 22*8)));
-			sampleRate := to_integer(unsigned(inside(27*8+7 downto 24*8)));
-			bitsPerSample := to_integer(unsigned(inside(35*8+7 downto 34*8)));
-			-- std_logic_vector(to_unsigned(channels, 4);
+		when START_READ =>
+			-- if DO_Rdy = '1' then
+				if counter >= X"15" then
+					nextState <= CANAL;
+				else
+					nextState <= START_READ;
+				end if;
+			-- potrzeba else?
+			-- end if;
 			
-			Line(63 downto 60) <= std_logic_vector(to_unsigned(channels, 4)); --inside(23*8 + 7 downto 22*8) & 
-			Line(59 downto 56) <= X"0";
-			Line(55 downto 40) <= std_logic_vector(to_unsigned(sampleRate, 16)); -- inside(27*8 + 7 downto 24*8) & 
-			Line(39 downto 36) <= X"0";
-			Line(35 downto 28) <= std_logic_vector(to_unsigned(bitsPerSample, 8)); -- inside(35*8 + 7 downto 34*8) &
-			Line(27 downto 0) <= (others => '0');
-		end if;
+		when CANAL =>
+			if counter = X"17" then -- DO_Rdy = '1' and 
+				nextState <= SAMPLE;
+			end if;
+			
+		when SAMPLE =>
+			if counter = X"21" then
+				nextState <= BITS;
+			end if;
+			
+		when BITS =>
+			if counter = X"2B" then
+				nextState <= PLAY;
+			end if;
+			
+		when PLAY =>
+			if Busy = '0' then
+				nextState <= PLAY_END;
+			end if;
+			
+		when OTHERS =>
+			nextState <= State;
+			
+	end case;
 	end process process2;
+		
+	process3 : process(state, DO, DO_Rdy)
+	
+	begin
+		if DO_Rdy = '1' then
+			if state = CANAL then
+				-- LITTLE ENDIAN!!!!!!!111
+				if counter = X"16" then
+					Line(55 downto 48) <= DO(7 downto 0);
+				else
+					Line(63 downto 56) <= DO(7 downto 0);
+				end if;
+			elsif state = SAMPLE then
+				if counter = X"18" then
+					Line(23 downto 16) <= DO(7 downto 0);
+				elsif counter = X"19" then
+					Line(31 downto 24) <= DO(7 downto 0);
+				elsif counter = X"1A" then
+					Line(39 downto 32) <= DO(7 downto 0);
+				elsif counter = X"1B" then
+					Line(47 downto 40) <= DO(7 downto 0);
+				end if;
+			elsif state = BITS then
+				if counter = X"22" then
+					Line(7 downto 0) <= DO(7 downto 0);
+				elsif counter = X"23" then
+					Line(15 downto 8) <= DO(7 downto 0);
+				end if;
+			end if;
+		end if;
+	end process process3;
+	
+	Pop <= '1' when (state /= IDLE) and DO_Rdy = '1'
+      else '0';
 	
 end Behavioral;
 
