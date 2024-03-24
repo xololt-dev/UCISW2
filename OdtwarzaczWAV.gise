@@ -23,12 +23,85 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_VHDL" xil_pn:name="baseSchema.vhf"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="naszregister.prj"/>
+    <file xil_pn:fileType="FILE_SPL" xil_pn:name="naszregister.spl"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="naszregister.stx"/>
+    <file xil_pn:fileType="FILE_SYMBOL" xil_pn:name="naszregister.sym" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="naszregister.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="registerTest_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="registerTest_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="registerTest_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="registerTest_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1710792852" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1710792852">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1710802262" xil_pn:in_ck="1452225005644695978" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1710802262">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="register.vhd"/>
+      <outfile xil_pn:name="registerTest.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1710794192" xil_pn:in_ck="-9205708270503913320" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-565435336588833173" xil_pn:start_ts="1710794192">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <outfile xil_pn:name="baseSchema.vhf"/>
+    </transform>
+    <transform xil_pn:end_ts="1710802262" xil_pn:in_ck="-1759008240292685656" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1710802262">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="baseSchema.vhf"/>
+      <outfile xil_pn:name="register.vhd"/>
+      <outfile xil_pn:name="registerTest.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1710802263" xil_pn:in_ck="-1759008240292685656" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8504345757072765460" xil_pn:start_ts="1710802262">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="registerTest_beh.prj"/>
+      <outfile xil_pn:name="registerTest_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1710802263" xil_pn:in_ck="892531366544280564" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="4653783856829995329" xil_pn:start_ts="1710802263">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="registerTest_isim_beh.wdb"/>
+    </transform>
+  </transforms>
 
 </generated_project>
