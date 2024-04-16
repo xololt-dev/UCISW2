@@ -6,12 +6,12 @@
 -- /___/  \  /    Vendor: Xilinx 
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
---  /   /         Filename : baseSchema.vhf
--- /___/   /\     Timestamp : 03/21/2024 13:18:11
+--  /   /         Filename : baseSchema_drc.vhf
+-- /___/   /\     Timestamp : 03/21/2024 12:06:55
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl C:/XilinxPrj/UCISW2-main/baseSchema.vhf -w C:/XilinxPrj/UCISW2-main/baseSchema.sch
+--Command: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\sch2hdl.exe -intstyle ise -family spartan3e -flat -suppress -vhdl baseSchema_drc.vhf -w C:/XilinxPrj/UCISW2-main/baseSchema.sch
 --Design Name: baseSchema
 --Device: spartan3e
 --Purpose:
@@ -25,86 +25,11 @@ use ieee.numeric_std.ALL;
 library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
-entity IFD_MXILINX_baseSchema is
-   generic( INIT : bit :=  '0');
-   port ( C : in    std_logic; 
-          D : in    std_logic; 
-          Q : out   std_logic);
-end IFD_MXILINX_baseSchema;
-
-architecture BEHAVIORAL of IFD_MXILINX_baseSchema is
-   attribute BOX_TYPE         : string ;
-   attribute IOB              : string ;
-   attribute IOSTANDARD       : string ;
-   attribute IBUF_DELAY_VALUE : string ;
-   attribute IFD_DELAY_VALUE  : string ;
-   signal D_IN   : std_logic;
-   signal XLXN_1 : std_logic;
-   signal XLXN_2 : std_logic;
-   component FDCE
-      generic( INIT : bit :=  '0');
-      port ( C   : in    std_logic; 
-             CE  : in    std_logic; 
-             CLR : in    std_logic; 
-             D   : in    std_logic; 
-             Q   : out   std_logic);
-   end component;
-   attribute BOX_TYPE of FDCE : component is "BLACK_BOX";
-   
-   component IBUF
-      port ( I : in    std_logic; 
-             O : out   std_logic);
-   end component;
-   attribute IOSTANDARD of IBUF : component is "DEFAULT";
-   attribute IBUF_DELAY_VALUE of IBUF : component is "0";
-   attribute IFD_DELAY_VALUE of IBUF : component is "AUTO";
-   attribute BOX_TYPE of IBUF : component is "BLACK_BOX";
-   
-   component VCC
-      port ( P : out   std_logic);
-   end component;
-   attribute BOX_TYPE of VCC : component is "BLACK_BOX";
-   
-   component GND
-      port ( G : out   std_logic);
-   end component;
-   attribute BOX_TYPE of GND : component is "BLACK_BOX";
-   
-   attribute IOB of I_36_15 : label is "TRUE";
-begin
-   I_36_15 : FDCE
-   generic map( INIT => INIT)
-      port map (C=>C,
-                CE=>XLXN_2,
-                CLR=>XLXN_1,
-                D=>D_IN,
-                Q=>Q);
-   
-   I_36_24 : IBUF
-      port map (I=>D,
-                O=>D_IN);
-   
-   I_36_26 : VCC
-      port map (P=>XLXN_2);
-   
-   I_36_29 : GND
-      port map (G=>XLXN_1);
-   
-end BEHAVIORAL;
-
-
-
-library ieee;
-use ieee.std_logic_1164.ALL;
-use ieee.numeric_std.ALL;
-library UNISIM;
-use UNISIM.Vcomponents.ALL;
-
 entity baseSchema is
-   port ( BTN_EAST  : in    std_logic; 
-          BTN_SOUTH : in    std_logic; 
-          BTN_WEST  : in    std_logic; 
+   port ( BTN_SOUTH : in    std_logic; 
           Clk_50MHz : in    std_logic; 
+          ROT_A     : in    std_logic; 
+          ROT_B     : in    std_logic; 
           SDC_MISO  : in    std_logic; 
           SW_0      : in    std_logic; 
           SW_1      : in    std_logic; 
@@ -124,15 +49,15 @@ end baseSchema;
 
 architecture BEHAVIORAL of baseSchema is
    attribute BOX_TYPE   : string ;
-   attribute HU_SET     : string ;
    signal FExt        : std_logic_vector (1 downto 0);
    signal FName       : std_logic_vector (7 downto 0);
    signal XLXN_1      : std_logic_vector (63 downto 0);
    signal XLXN_2      : std_logic_vector (7 downto 0);
    signal XLXN_4      : std_logic;
    signal XLXN_9      : std_logic;
+   signal XLXN_13     : std_logic;
+   signal XLXN_15     : std_logic;
    signal XLXN_55     : std_logic_vector (15 downto 0);
-   signal XLXN_59     : std_logic;
    signal LED_7_DUMMY : std_logic;
    component LCD1x64
       port ( Clk_50MHz : in    std_logic; 
@@ -144,6 +69,14 @@ architecture BEHAVIORAL of baseSchema is
              LCD_RW    : out   std_logic; 
              LCD_RS    : out   std_logic; 
              SF_CE     : out   std_logic);
+   end component;
+   
+   component RotaryEnc
+      port ( ROT_A : in    std_logic; 
+             ROT_B : in    std_logic; 
+             RotL  : out   std_logic; 
+             RotR  : out   std_logic; 
+             Clk   : in    std_logic);
    end component;
    
    component SDC_FileReader
@@ -176,15 +109,15 @@ architecture BEHAVIORAL of baseSchema is
              Line      : out   std_logic_vector (63 downto 0));
    end component;
    
-   component VCC
-      port ( P : out   std_logic);
-   end component;
-   attribute BOX_TYPE of VCC : component is "BLACK_BOX";
-   
    component GND
       port ( G : out   std_logic);
    end component;
    attribute BOX_TYPE of GND : component is "BLACK_BOX";
+   
+   component VCC
+      port ( P : out   std_logic);
+   end component;
+   attribute BOX_TYPE of VCC : component is "BLACK_BOX";
    
    component BUF
       port ( I : in    std_logic; 
@@ -192,38 +125,37 @@ architecture BEHAVIORAL of baseSchema is
    end component;
    attribute BOX_TYPE of BUF : component is "BLACK_BOX";
    
-   component IFD_MXILINX_baseSchema
-      generic( INIT : bit :=  '0');
-      port ( C : in    std_logic; 
-             D : in    std_logic; 
-             Q : out   std_logic);
-   end component;
-   
-   attribute HU_SET of XLXI_20 : label is "XLXI_20_0";
 begin
-   XLXN_55(15 downto 0) <= x"0000";
+   XLXN_55(15 downto 0) <= x"FFFF";
    LED_7 <= LED_7_DUMMY;
    XLXI_1 : LCD1x64
       port map (Blank(15 downto 0)=>XLXN_55(15 downto 0),
                 Clk_50MHz=>Clk_50MHz,
                 Line(63 downto 0)=>XLXN_1(63 downto 0),
-                Reset=>XLXN_59,
+                Reset=>BTN_SOUTH,
                 LCD_E=>LCD_E,
                 LCD_RS=>LCD_RS,
                 LCD_RW=>LCD_RW,
                 SF_CE=>SF_CE,
                 LCD_D(3 downto 0)=>LCD_D(3 downto 0));
    
+   XLXI_2 : RotaryEnc
+      port map (Clk=>Clk_50MHz,
+                ROT_A=>ROT_A,
+                ROT_B=>ROT_B,
+                RotL=>XLXN_15,
+                RotR=>XLXN_13);
+   
    XLXI_3 : SDC_FileReader
-      port map (Abort=>BTN_EAST,
+      port map (Abort=>XLXN_13,
                 Clk_Sys=>Clk_50MHz,
                 Clk_50MHz=>Clk_50MHz,
                 DO_Pop=>XLXN_9,
                 FExt(1 downto 0)=>FExt(1 downto 0),
                 FName(7 downto 0)=>FName(7 downto 0),
-                Reset=>XLXN_59,
+                Reset=>BTN_SOUTH,
                 SDC_MISO=>SDC_MISO,
-                Start=>BTN_WEST,
+                Start=>XLXN_15,
                 Busy=>LED_7_DUMMY,
                 DO(7 downto 0)=>XLXN_2(7 downto 0),
                 DO_Rdy=>XLXN_4,
@@ -237,10 +169,13 @@ begin
                 Clk_50MHz=>Clk_50MHz,
                 DO(7 downto 0)=>XLXN_2(7 downto 0),
                 DO_Rdy=>XLXN_4,
-                Reset=>XLXN_59,
-                Start=>BTN_WEST,
+                Reset=>BTN_SOUTH,
+                Start=>XLXN_15,
                 Line(63 downto 0)=>XLXN_1(63 downto 0),
                 Pop=>XLXN_9);
+   
+   XLXI_5 : GND
+      port map (G=>FExt(0));
    
    XLXI_6 : VCC
       port map (P=>FExt(1));
@@ -272,14 +207,6 @@ begin
    XLXI_17 : BUF
       port map (I=>SW_0,
                 O=>FName(0));
-   
-   XLXI_19 : VCC
-      port map (P=>FExt(0));
-   
-   XLXI_20 : IFD_MXILINX_baseSchema
-      port map (C=>Clk_50MHz,
-                D=>BTN_SOUTH,
-                Q=>XLXN_59);
    
 end BEHAVIORAL;
 

@@ -1,0 +1,517 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.02 secs
+ 
+--> 
+Reading design: baseSchema.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "baseSchema.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "baseSchema"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : baseSchema
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 4
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+WARNING:HDLParsers:3607 - Unit work/IFD_MXILINX_baseSchema is now defined in a different file.  It was defined in "C:/XilinxPrj/UCISW2-main/baseSchema.vhf", and is now defined in "/home/xololt/repos/UCISW2-main/baseSchema.vhf".
+WARNING:HDLParsers:3607 - Unit work/IFD_MXILINX_baseSchema/BEHAVIORAL is now defined in a different file.  It was defined in "C:/XilinxPrj/UCISW2-main/baseSchema.vhf", and is now defined in "/home/xololt/repos/UCISW2-main/baseSchema.vhf".
+WARNING:HDLParsers:3607 - Unit work/baseSchema is now defined in a different file.  It was defined in "C:/XilinxPrj/UCISW2-main/baseSchema.vhf", and is now defined in "/home/xololt/repos/UCISW2-main/baseSchema.vhf".
+WARNING:HDLParsers:3607 - Unit work/baseSchema/BEHAVIORAL is now defined in a different file.  It was defined in "C:/XilinxPrj/UCISW2-main/baseSchema.vhf", and is now defined in "/home/xololt/repos/UCISW2-main/baseSchema.vhf".
+WARNING:HDLParsers:3607 - Unit work/naszregister is now defined in a different file.  It was defined in "C:/XilinxPrj/UCISW2-main/register.vhd", and is now defined in "/home/xololt/repos/UCISW2-main/register.vhd".
+WARNING:HDLParsers:3607 - Unit work/naszregister/Behavioral is now defined in a different file.  It was defined in "C:/XilinxPrj/UCISW2-main/register.vhd", and is now defined in "/home/xololt/repos/UCISW2-main/register.vhd".
+Compiling vhdl file "/home/xololt/repos/UCISW2-main/register.vhd" in Library work.
+Architecture behavioral of Entity naszregister is up to date.
+Compiling vhdl file "/home/xololt/repos/UCISW2-main/baseSchema.vhf" in Library work.
+Architecture behavioral of Entity ifd_mxilinx_baseschema is up to date.
+Architecture behavioral of Entity baseschema is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <baseSchema> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <naszregister> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <IFD_MXILINX_baseSchema> in library <work> (architecture <behavioral>) with generics.
+	INIT = '0'
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <baseSchema> in library <work> (Architecture <behavioral>).
+WARNING:Xst:2211 - "/home/xololt/repos/UCISW2-main/baseSchema.vhf" line 206: Instantiating black box module <LCD1x64>.
+WARNING:Xst:2211 - "/home/xololt/repos/UCISW2-main/baseSchema.vhf" line 217: Instantiating black box module <SDC_FileReader>.
+    Set user-defined property "HU_SET =  XLXI_20_0" for instance <XLXI_20> in unit <baseSchema>.
+Entity <baseSchema> analyzed. Unit <baseSchema> generated.
+
+Analyzing Entity <naszregister> in library <work> (Architecture <behavioral>).
+Entity <naszregister> analyzed. Unit <naszregister> generated.
+
+Analyzing generic Entity <IFD_MXILINX_baseSchema> in library <work> (Architecture <behavioral>).
+	INIT = '0'
+    Set user-defined property "INIT =  0" for instance <I_36_15> in unit <IFD_MXILINX_baseSchema>.
+    Set user-defined property "IOB =  TRUE" for instance <I_36_15> in unit <IFD_MXILINX_baseSchema>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_24> in unit <IFD_MXILINX_baseSchema>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_24> in unit <IFD_MXILINX_baseSchema>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_24> in unit <IFD_MXILINX_baseSchema>.
+Entity <IFD_MXILINX_baseSchema> analyzed. Unit <IFD_MXILINX_baseSchema> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <naszregister>.
+    Related source file is "/home/xololt/repos/UCISW2-main/register.vhd".
+    Using one-hot encoding for signal <state>.
+    Found 64-bit register for signal <Line>.
+    Found 64-bit up counter for signal <counter>.
+    Found 1-bit register for signal <incremented>.
+    Found 64-bit comparator not equal for signal <Line_2$cmp_ne0000> created at line 145.
+    Found 64-bit comparator not equal for signal <Line_22$cmp_ne0000> created at line 135.
+    Found 64-bit comparator not equal for signal <Line_24$cmp_ne0000> created at line 136.
+    Found 64-bit comparator not equal for signal <Line_32$cmp_ne0000> created at line 138.
+    Found 64-bit comparator not equal for signal <Line_40$cmp_ne0000> created at line 140.
+    Found 64-bit comparator not equal for signal <Line_50$cmp_ne0000> created at line 129.
+    Found 64-bit comparator equal for signal <Line_60$cmp_eq0000> created at line 129.
+    Found 64-bit comparator not equal for signal <Line_8$cmp_ne0000> created at line 146.
+    Found 7-bit register for signal <nextState>.
+    Found 64-bit comparator equal for signal <nextState$cmp_eq0000> created at line 95.
+    Found 64-bit comparator equal for signal <nextState$cmp_eq0001> created at line 100.
+    Found 64-bit comparator equal for signal <nextState$cmp_eq0002> created at line 105.
+    Found 64-bit comparator greatequal for signal <nextState$cmp_ge0000> created at line 86.
+    Found 7-bit register for signal <state>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  79 D-type flip-flop(s).
+	inferred  12 Comparator(s).
+Unit <naszregister> synthesized.
+
+
+Synthesizing Unit <IFD_MXILINX_baseSchema>.
+    Related source file is "/home/xololt/repos/UCISW2-main/baseSchema.vhf".
+Unit <IFD_MXILINX_baseSchema> synthesized.
+
+
+Synthesizing Unit <baseSchema>.
+    Related source file is "/home/xololt/repos/UCISW2-main/baseSchema.vhf".
+Unit <baseSchema> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 64-bit up counter                                     : 1
+# Registers                                            : 67
+ 1-bit register                                        : 65
+ 7-bit register                                        : 2
+# Comparators                                          : 12
+ 64-bit comparator equal                               : 4
+ 64-bit comparator greatequal                          : 1
+ 64-bit comparator not equal                           : 7
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <LCD1x64.ngc>.
+Reading core <SDC_FileReader.ngc>.
+Loading core <LCD1x64> for timing and area information for instance <XLXI_1>.
+Loading core <SDC_FileReader> for timing and area information for instance <XLXI_3>.
+WARNING:Xst:2677 - Node <nextState_6> of sequential type is unconnected in block <XLXI_4>.
+WARNING:Xst:2677 - Node <state_6> of sequential type is unconnected in block <XLXI_4>.
+WARNING:Xst:2677 - Node <nextState_6> of sequential type is unconnected in block <naszregister>.
+WARNING:Xst:2677 - Node <state_6> of sequential type is unconnected in block <naszregister>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 64-bit up counter                                     : 1
+# Registers                                            : 78
+ Flip-Flops                                            : 78
+# Comparators                                          : 12
+ 64-bit comparator equal                               : 4
+ 64-bit comparator greatequal                          : 1
+ 64-bit comparator not equal                           : 7
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <baseSchema> ...
+
+Optimizing unit <naszregister> ...
+WARNING:Xst:2677 - Node <nextState_5> of sequential type is unconnected in block <naszregister>.
+WARNING:Xst:2677 - Node <state_5> of sequential type is unconnected in block <naszregister>.
+WARNING:Xst:2677 - Node <nextState_5> of sequential type is unconnected in block <naszregister>.
+WARNING:Xst:2677 - Node <state_5> of sequential type is unconnected in block <naszregister>.
+
+Optimizing unit <IFD_MXILINX_baseSchema> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block baseSchema, actual ratio is 22.
+INFO:Xst:2260 - The FF/Latch <cntDigit_0> in Unit <XLXI_1> is equivalent to the following 4 FFs/Latches : <cntDigit_0_1> <cntDigit_0_2> <cntDigit_0_3> <cntDigit_0_4> 
+INFO:Xst:2260 - The FF/Latch <cntDigit_1> in Unit <XLXI_1> is equivalent to the following 2 FFs/Latches : <cntDigit_1_1> <cntDigit_1_2> 
+INFO:Xst:2260 - The FF/Latch <State_16> in Unit <XLXI_1> is equivalent to the following FF/Latch : <State_16_1> 
+INFO:Xst:2260 - The FF/Latch <XLXI_94/State_11> in Unit <XLXI_3> is equivalent to the following FF/Latch : <XLXI_94/State_11_1> 
+INFO:Xst:2260 - The FF/Latch <XLXI_94/State_15> in Unit <XLXI_3> is equivalent to the following FF/Latch : <XLXI_94/State_15_1> 
+INFO:Xst:2260 - The FF/Latch <XLXI_94/SpC_1> in Unit <XLXI_3> is equivalent to the following FF/Latch : <XLXI_94/SpC_1_1> 
+INFO:Xst:2260 - The FF/Latch <cntDigit_0> in Unit <XLXI_1> is equivalent to the following 4 FFs/Latches : <cntDigit_0_1> <cntDigit_0_2> <cntDigit_0_3> <cntDigit_0_4> 
+INFO:Xst:2260 - The FF/Latch <cntDigit_1> in Unit <XLXI_1> is equivalent to the following 2 FFs/Latches : <cntDigit_1_1> <cntDigit_1_2> 
+INFO:Xst:2260 - The FF/Latch <State_16> in Unit <XLXI_1> is equivalent to the following FF/Latch : <State_16_1> 
+INFO:Xst:2260 - The FF/Latch <XLXI_94/State_11> in Unit <XLXI_3> is equivalent to the following FF/Latch : <XLXI_94/State_11_1> 
+INFO:Xst:2260 - The FF/Latch <XLXI_94/State_15> in Unit <XLXI_3> is equivalent to the following FF/Latch : <XLXI_94/State_15_1> 
+INFO:Xst:2260 - The FF/Latch <XLXI_94/SpC_1> in Unit <XLXI_3> is equivalent to the following FF/Latch : <XLXI_94/SpC_1_1> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 140
+ Flip-Flops                                            : 140
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : baseSchema.ngr
+Top Level Output File Name         : baseSchema
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 23
+
+Cell Usage :
+# BELS                             : 2818
+#      BUF                         : 4
+#      GND                         : 4
+#      INV                         : 55
+#      LUT1                        : 173
+#      LUT2                        : 228
+#      LUT2_D                      : 9
+#      LUT2_L                      : 28
+#      LUT3                        : 327
+#      LUT3_D                      : 10
+#      LUT3_L                      : 11
+#      LUT4                        : 837
+#      LUT4_D                      : 65
+#      LUT4_L                      : 97
+#      MULT_AND                    : 10
+#      MUXCY                       : 523
+#      MUXF5                       : 78
+#      MUXF6                       : 19
+#      MUXF7                       : 5
+#      OR2                         : 2
+#      VCC                         : 4
+#      XORCY                       : 329
+# FlipFlops/Latches                : 691
+#      FD                          : 71
+#      FDCE                        : 1
+#      FDE                         : 210
+#      FDR                         : 73
+#      FDRE                        : 171
+#      FDRS                        : 15
+#      FDRSE                       : 6
+#      FDS                         : 141
+#      FDSE                        : 3
+# RAMS                             : 1
+#      RAMB16_S9_S9                : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 22
+#      IBUF                        : 8
+#      IOBUF                       : 4
+#      OBUF                        : 10
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                     1061  out of   4656    22%  
+ Number of Slice Flip Flops:            690  out of   9312     7%  
+ Number of 4 input LUTs:               1840  out of   9312    19%  
+ Number of IOs:                          23
+ Number of bonded IOBs:                  23  out of    232     9%  
+    IOB Flip Flops:                       1
+ Number of BRAMs:                         1  out of     20     5%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clk_50MHz                          | BUFGP                  | 692   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+XLXI_20/XLXN_1(XLXI_20/I_36_29:G)  | NONE(XLXI_20/I_36_15)  | 1     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 12.619ns (Maximum Frequency: 79.246MHz)
+   Minimum input arrival time before clock: 10.170ns
+   Maximum output required time after clock: 10.403ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk_50MHz'
+  Clock period: 12.619ns (frequency: 79.246MHz)
+  Total number of paths / destination ports: 75015 / 1523
+-------------------------------------------------------------------------
+Delay:               12.619ns (Levels of Logic = 20)
+  Source:            XLXI_3/XLXI_89/cntBytes_5 (FF)
+  Destination:       XLXI_3/XLXI_89/cntBytes_11 (FF)
+  Source Clock:      Clk_50MHz rising
+  Destination Clock: Clk_50MHz rising
+
+  Data Path: XLXI_3/XLXI_89/cntBytes_5 to XLXI_3/XLXI_89/cntBytes_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             3   0.591   0.706  XLXI_89/cntBytes_5 (XLXI_89/cntBytes<5>)
+     LUT2_L:I0->LO         1   0.704   0.104  XLXI_89/Full512_mux0000212 (XLXI_89/Full512_mux0000212)
+     LUT4:I3->O            2   0.704   0.451  XLXI_89/Full512_mux0000217 (XLXI_89/Full512_mux0000217)
+     LUT4_D:I3->O          5   0.704   0.712  XLXI_89/NextState_0_cmp_eq000011 (XLXI_89/N3)
+     LUT3:I1->O           19   0.704   1.164  XLXI_89/iDO_Rdy1 (DO_Rdy)
+     end scope: 'XLXI_3'
+     LUT2:I1->O            4   0.704   0.762  XLXI_4/Pop_and00001 (XLXN_9)
+     begin scope: 'XLXI_3'
+     LUT4:I0->O           14   0.704   1.035  XLXI_89/DoPOP_and00001 (XLXI_89/DoPOP)
+     LUT3:I2->O            1   0.704   0.000  XLXI_89/Mcount_cntBytes_lut<0> (XLXI_89/Mcount_cntBytes_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  XLXI_89/Mcount_cntBytes_cy<0> (XLXI_89/Mcount_cntBytes_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_89/Mcount_cntBytes_cy<1> (XLXI_89/Mcount_cntBytes_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_89/Mcount_cntBytes_cy<2> (XLXI_89/Mcount_cntBytes_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_89/Mcount_cntBytes_cy<3> (XLXI_89/Mcount_cntBytes_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_89/Mcount_cntBytes_cy<4> (XLXI_89/Mcount_cntBytes_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_89/Mcount_cntBytes_cy<5> (XLXI_89/Mcount_cntBytes_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_89/Mcount_cntBytes_cy<6> (XLXI_89/Mcount_cntBytes_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_89/Mcount_cntBytes_cy<7> (XLXI_89/Mcount_cntBytes_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_89/Mcount_cntBytes_cy<8> (XLXI_89/Mcount_cntBytes_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  XLXI_89/Mcount_cntBytes_cy<9> (XLXI_89/Mcount_cntBytes_cy<9>)
+     MUXCY:CI->O           0   0.059   0.000  XLXI_89/Mcount_cntBytes_cy<10> (XLXI_89/Mcount_cntBytes_cy<10>)
+     XORCY:CI->O           1   0.804   0.000  XLXI_89/Mcount_cntBytes_xor<11> (XLXI_89/Result<11>)
+     FDRE:D                    0.308          XLXI_89/cntBytes_11
+    ----------------------------------------
+    Total                     12.619ns (7.685ns logic, 4.934ns route)
+                                       (60.9% logic, 39.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk_50MHz'
+  Total number of paths / destination ports: 85 / 79
+-------------------------------------------------------------------------
+Offset:              10.170ns (Levels of Logic = 9)
+  Source:            SW_0 (PAD)
+  Destination:       XLXI_3/XLXI_94/State_23 (FF)
+  Destination Clock: Clk_50MHz rising
+
+  Data Path: SW_0 to XLXI_3/XLXI_94/State_23
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.218   0.420  SW_0_IBUF (SW_0_IBUF)
+     BUF:I->O              1   0.704   0.595  XLXI_17 (FName<0>)
+     begin scope: 'XLXI_3'
+     LUT2:I0->O            1   0.704   0.424  XLXI_94/NextState_and0010124 (XLXI_94/NextState_and0010124)
+     LUT4:I3->O            2   0.704   0.451  XLXI_94/NextState_and0010159_SW0 (N421)
+     LUT4_L:I3->LO         1   0.704   0.275  XLXI_94/NextState_and0010159 (XLXI_94/NextState_and0010)
+     LUT4:I0->O            1   0.704   0.424  XLXI_94/State_mux0002<8>117_SW0 (N489)
+     LUT4_L:I3->LO         1   0.704   0.104  XLXI_94/State_mux0002<8>117 (XLXI_94/State_mux0002<8>117)
+     LUT4:I3->O            1   0.704   0.420  XLXI_94/State_mux0002<8>167 (XLXI_94/State_mux0002<8>167)
+     FDS:S                     0.911          XLXI_94/State_23
+    ----------------------------------------
+    Total                     10.170ns (7.057ns logic, 3.113ns route)
+                                       (69.4% logic, 30.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk_50MHz'
+  Total number of paths / destination ports: 48 / 13
+-------------------------------------------------------------------------
+Offset:              10.403ns (Levels of Logic = 7)
+  Source:            XLXI_3/XLXI_89/cntBytes_5 (FF)
+  Destination:       LED_7 (PAD)
+  Source Clock:      Clk_50MHz rising
+
+  Data Path: XLXI_3/XLXI_89/cntBytes_5 to LED_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             3   0.591   0.706  XLXI_89/cntBytes_5 (XLXI_89/cntBytes<5>)
+     LUT2_L:I0->LO         1   0.704   0.104  XLXI_89/Full512_mux0000212 (XLXI_89/Full512_mux0000212)
+     LUT4:I3->O            2   0.704   0.451  XLXI_89/Full512_mux0000217 (XLXI_89/Full512_mux0000217)
+     LUT4_D:I3->O          5   0.704   0.808  XLXI_89/NextState_0_cmp_eq000011 (XLXI_89/N3)
+     LUT2:I0->O            1   0.704   0.420  XLXI_89/NotEmpty1 (XLXN_647)
+     OR2:I0->O             3   0.704   0.531  XLXI_92 (Busy)
+     end scope: 'XLXI_3'
+     OBUF:I->O                 3.272          LED_7_OBUF (LED_7)
+    ----------------------------------------
+    Total                     10.403ns (7.383ns logic, 3.020ns route)
+                                       (71.0% logic, 29.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.98 secs
+ 
+--> 
+
+
+Total memory usage is 534780 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   16 (   0 filtered)
+Number of infos    :   12 (   0 filtered)
+

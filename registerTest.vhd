@@ -44,10 +44,17 @@ ARCHITECTURE behavior OF registerTest IS
          DO : IN  std_logic_vector(7 downto 0);
          DO_Rdy : IN  std_logic;
 			Busy : IN std_logic;
+			DAC_Busy : in std_logic;
 			Start : IN std_logic;
          Reset : IN  std_logic;
          Clk_50MHz : IN  std_logic;
 			Pop : OUT std_logic;
+			MonoStereo : out std_logic;
+			EightSixteen : out std_logic;
+			SRate_Tick : out std_logic;
+			Cmd : out std_logic_vector (3 downto 0);
+			Addr : out std_logic_vector (3 downto 0);
+			Data : out std_logic_vector (11 downto 0);
          Line : OUT  std_logic_vector(63 downto 0)
         );
     END COMPONENT;
@@ -57,12 +64,19 @@ ARCHITECTURE behavior OF registerTest IS
    signal DO : std_logic_vector(7 downto 0) := (others => '0');
    signal DO_Rdy : std_logic := '0';
 	signal Busy : std_logic := '0';
+	signal DAC_Busy : std_logic := '0';
    signal Start : std_logic := '1';
    signal Reset : std_logic := '0';
    signal Clk_50MHz : std_logic := '0';
 
  	--Outputs
 	signal Pop : std_logic := '0';
+	signal MonoStereo : std_logic := '0';
+	signal EightSixteen : std_logic := '0';
+	signal SRate_Tick : std_logic := '0';
+	signal Cmd : std_logic_vector (3 downto 0);
+	signal Addr : std_logic_vector (3 downto 0);
+	signal Data : std_logic_vector (11 downto 0);	
    signal Line : std_logic_vector(63 downto 0);
 
    -- Clock period definitions
@@ -75,10 +89,17 @@ BEGIN
           DO => DO,
           DO_Rdy => DO_Rdy,
 			 Busy => Busy,
+			 DAC_Busy => DAC_Busy,
 			 Pop => Pop,
           Start => Start,
           Reset => Reset,
           Clk_50MHz => Clk_50MHz,
+			 MonoStereo => MonoStereo,
+			 EightSixteen => EightSixteen,
+			 SRate_Tick => SRate_Tick,
+			 Cmd => Cmd,
+			 Addr => Addr,
+			 Data => Data,
           Line => Line
         );
 
@@ -96,7 +117,7 @@ BEGIN
    stim_proc: process
 
       type t_FileOfCharacter is file of character;
-      file fTheFile : t_FileOfCharacter is in "/home/xololt/repos/abc/bengier.wav"; -- "D:/1.wav";
+      file fTheFile : t_FileOfCharacter is in "./bengier.wav";--"./pcm0808m.wav";-- "./bengier.wav"; -- "C:\XilinxPrj\UCISW2-main\bengier.wav";-- "D:/1.wav";
       variable byte : character;
 
    begin
@@ -105,7 +126,7 @@ BEGIN
       Busy <= '1';
       
       while not endfile( fTheFile ) loop
-        wait for Clk_50MHz_period * 3;    -- represents SDCard read delay
+        wait for Clk_50MHz_period * 3.1;    -- represents SDCard read delay
         read( fTheFile, byte );
         DO <= std_logic_vector( to_unsigned( character'pos( byte ) , 8 ) );
         DO_Rdy <= '1';

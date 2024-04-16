@@ -1,0 +1,8 @@
+vhdtdtfi -lib work register.vhd -prj OdtwarzaczWAV -o naszregister.spl -module naszregister -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e naszregister.spl C:/XilinxPrj/UCISW2-main/naszregister.sym 
+vhdtdtfi -lib work register.vhd -prj OdtwarzaczWAV -o naszregister.spl -module naszregister -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e naszregister.spl C:/XilinxPrj/UCISW2-main/naszregister.sym 
+vhdtdtfi -lib work register.vhd -prj OdtwarzaczWAV -o naszregister.spl -module naszregister -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e naszregister.spl C:/XilinxPrj/UCISW2-main/naszregister.sym 
+vhdtdtfi -lib work register.vhd -prj OdtwarzaczWAV -o naszregister.spl -module naszregister -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e naszregister.spl C:/XilinxPrj/UCISW2-main/naszregister.sym 
