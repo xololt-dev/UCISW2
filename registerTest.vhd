@@ -117,7 +117,7 @@ BEGIN
    stim_proc: process
 
       type t_FileOfCharacter is file of character;
-      file fTheFile : t_FileOfCharacter is in "./bengier.wav";--"./pcm0808m.wav";-- "./bengier.wav"; -- "C:\XilinxPrj\UCISW2-main\bengier.wav";-- "D:/1.wav";
+      file fTheFile : t_FileOfCharacter is in "./bengier.wav"; -- "./pcm0808m.wav";-- "C:\XilinxPrj\UCISW2-main\bengier.wav";-- "D:/1.wav";
       variable byte : character;
 
    begin

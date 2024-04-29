@@ -57,3 +57,72 @@ map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_rea
 par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
 trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf -ucf ADC_DAC.ucf 
 bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc LCD.ucf -uc PS2_USB_SDC.ucf -p xc3s500e-fg320-4 WAV_reader.ngc WAV_reader.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_reader_map.ncd WAV_reader.ngd WAV_reader.pcf 
+par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf 
+bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc LCD.ucf -uc PS2_USB_SDC.ucf -p xc3s500e-fg320-4 WAV_reader.ngc WAV_reader.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_reader_map.ncd WAV_reader.ngd WAV_reader.pcf 
+par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf 
+bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc LCD.ucf -uc PS2_USB_SDC.ucf -p xc3s500e-fg320-4 WAV_reader.ngc WAV_reader.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_reader_map.ncd WAV_reader.ngd WAV_reader.pcf 
+par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf 
+bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc LCD.ucf -uc PS2_USB_SDC.ucf -p xc3s500e-fg320-4 WAV_reader.ngc WAV_reader.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_reader_map.ncd WAV_reader.ngd WAV_reader.pcf 
+par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf 
+bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc LCD.ucf -uc PS2_USB_SDC.ucf -p xc3s500e-fg320-4 WAV_reader.ngc WAV_reader.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_reader_map.ncd WAV_reader.ngd WAV_reader.pcf 
+par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf 
+bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc LCD.ucf -uc PS2_USB_SDC.ucf -p xc3s500e-fg320-4 WAV_reader.ngc WAV_reader.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_reader_map.ncd WAV_reader.ngd WAV_reader.pcf 
+par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf 
+bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc LCD.ucf -uc PS2_USB_SDC.ucf -p xc3s500e-fg320-4 WAV_reader.ngc WAV_reader.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_reader_map.ncd WAV_reader.ngd WAV_reader.pcf 
+par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf 
+bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc LCD.ucf -uc PS2_USB_SDC.ucf -p xc3s500e-fg320-4 WAV_reader.ngc WAV_reader.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_reader_map.ncd WAV_reader.ngd WAV_reader.pcf 
+par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf 
+bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc LCD.ucf -uc PS2_USB_SDC.ucf -p xc3s500e-fg320-4 WAV_reader.ngc WAV_reader.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_reader_map.ncd WAV_reader.ngd WAV_reader.pcf 
+par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf 
+bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc LCD.ucf -uc PS2_USB_SDC.ucf -p xc3s500e-fg320-4 WAV_reader.ngc WAV_reader.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_reader_map.ncd WAV_reader.ngd WAV_reader.pcf 
+par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf 
+bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc LCD.ucf -uc PS2_USB_SDC.ucf -p xc3s500e-fg320-4 WAV_reader.ngc WAV_reader.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o WAV_reader_map.ncd WAV_reader.ngd WAV_reader.pcf 
+par -w -intstyle ise -ol high -t 1 WAV_reader_map.ncd WAV_reader.ncd WAV_reader.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml WAV_reader.twx WAV_reader.ncd -o WAV_reader.twr WAV_reader.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf LCD.ucf -ucf PS2_USB_SDC.ucf 
+bitgen -intstyle ise -f WAV_reader.ut WAV_reader.ncd 

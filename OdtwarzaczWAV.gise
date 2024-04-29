@@ -150,7 +150,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1713281372" xil_pn:in_ck="1452225005644695978" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1713281372">
+    <transform xil_pn:end_ts="1713441722" xil_pn:in_ck="1452225005644695978" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1713441722">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -172,7 +172,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1713281372" xil_pn:in_ck="1452225005644695978" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1713281372">
+    <transform xil_pn:end_ts="1713441722" xil_pn:in_ck="1452225005644695978" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1713441722">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -183,7 +183,7 @@
       <outfile xil_pn:name="register.vhd"/>
       <outfile xil_pn:name="registerTest.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1713281373" xil_pn:in_ck="1452225005644695978" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4111118252404282360" xil_pn:start_ts="1713281372">
+    <transform xil_pn:end_ts="1713441725" xil_pn:in_ck="1452225005644695978" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4111118252404282360" xil_pn:start_ts="1713441722">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
@@ -198,7 +198,7 @@
       <outfile xil_pn:name="registerTest_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1713281373" xil_pn:in_ck="4284169368734419396" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7527268608104439643" xil_pn:start_ts="1713281373">
+    <transform xil_pn:end_ts="1713441725" xil_pn:in_ck="4284169368734419396" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7527268608104439643" xil_pn:start_ts="1713441725">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
@@ -238,13 +238,11 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1712231896" xil_pn:in_ck="-3932182213864650438" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="6752166790434060160" xil_pn:start_ts="1712231887">
+    <transform xil_pn:end_ts="1713442230" xil_pn:in_ck="-3932182213864650438" xil_pn:name="TRANEXT_xstsynthesize_spartan3e" xil_pn:prop_ck="6752166790434060160" xil_pn:start_ts="1713442220">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name=".lso"/>
       <outfile xil_pn:name="WAV_reader.jhd"/>
@@ -265,24 +263,20 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1712231900" xil_pn:in_ck="-5255804421080387750" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="2137630350464058690" xil_pn:start_ts="1712231896">
+    <transform xil_pn:end_ts="1713442235" xil_pn:in_ck="-2301141174493951828" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="2137630350464058690" xil_pn:start_ts="1713442230">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="WAV_reader.bld"/>
       <outfile xil_pn:name="WAV_reader.ngd"/>
       <outfile xil_pn:name="WAV_reader_ngdbuild.xrpt"/>
       <outfile xil_pn:name="_ngo"/>
       <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1712231904" xil_pn:in_ck="-5881690348346281534" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-5849673150125579957" xil_pn:start_ts="1712231900">
+    <transform xil_pn:end_ts="1713442239" xil_pn:in_ck="1601743162478027029" xil_pn:name="TRANEXT_map_spartan3" xil_pn:prop_ck="-5849673150125579957" xil_pn:start_ts="1713442235">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="WAV_reader.pcf"/>
@@ -295,12 +289,10 @@
       <outfile xil_pn:name="WAV_reader_usage.xml"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1712231919" xil_pn:in_ck="-8103239512125746725" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-5563652517805085498" xil_pn:start_ts="1712231904">
+    <transform xil_pn:end_ts="1713442256" xil_pn:in_ck="4945781525471497991" xil_pn:name="TRANEXT_par_spartan3" xil_pn:prop_ck="-5563652517805085498" xil_pn:start_ts="1713442239">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="WAV_reader.ncd"/>
       <outfile xil_pn:name="WAV_reader.pad"/>
       <outfile xil_pn:name="WAV_reader.par"/>
@@ -312,11 +304,9 @@
       <outfile xil_pn:name="WAV_reader_par.xrpt"/>
       <outfile xil_pn:name="_xmsgs/par.xmsgs"/>
     </transform>
-    <transform xil_pn:end_ts="1712231925" xil_pn:in_ck="-5412749317278578845" xil_pn:name="TRANEXT_bitFile_spartan3e" xil_pn:prop_ck="287829442711806529" xil_pn:start_ts="1712231919">
+    <transform xil_pn:end_ts="1713442262" xil_pn:in_ck="-8528637578785850382" xil_pn:name="TRANEXT_bitFile_spartan3e" xil_pn:prop_ck="287829442711806529" xil_pn:start_ts="1713442256">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="WAV_reader.ut"/>
       <outfile xil_pn:name="_xmsgs/bitgen.xmsgs"/>
       <outfile xil_pn:name="wav_reader.bgn"/>
@@ -325,17 +315,15 @@
       <outfile xil_pn:name="webtalk.log"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1712229045" xil_pn:in_ck="3087471136472245645" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="5582947192412673156" xil_pn:start_ts="1712229043">
+    <transform xil_pn:end_ts="1713441779" xil_pn:in_ck="5042444189706635910" xil_pn:name="TRAN_configureTargetDevice" xil_pn:prop_ck="5582947192412673156" xil_pn:start_ts="1713441777">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="InputChanged"/>
     </transform>
-    <transform xil_pn:end_ts="1712231919" xil_pn:in_ck="-5881690348346281666" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1712231916">
+    <transform xil_pn:end_ts="1713442256" xil_pn:in_ck="-1847526296161793779" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416186" xil_pn:start_ts="1713442253">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="WAV_reader.twr"/>
       <outfile xil_pn:name="WAV_reader.twx"/>
       <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>

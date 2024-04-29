@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: WAV_reader.prj
 
@@ -104,10 +104,10 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/XilinxPrj/UCISW2-main/register.vhd" in Library work.
+Compiling vhdl file "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/register.vhd" in Library work.
 Entity <naszregister> compiled.
 Entity <naszregister> (Architecture <behavioral>) compiled.
-Compiling vhdl file "C:/XilinxPrj/UCISW2-main/WAV_reader.vhf" in Library work.
+Compiling vhdl file "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.vhf" in Library work.
 Architecture behavioral of Entity ifd_mxilinx_wav_reader is up to date.
 Architecture behavioral of Entity wav_reader is up to date.
 
@@ -126,10 +126,10 @@ Analyzing hierarchy for entity <naszregister> in library <work> (architecture <b
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <WAV_reader> in library <work> (Architecture <behavioral>).
-WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main/WAV_reader.vhf" line 251: Instantiating black box module <LCD1x64>.
-WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main/WAV_reader.vhf" line 262: Instantiating black box module <SDC_FileReader>.
+WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.vhf" line 251: Instantiating black box module <LCD1x64>.
+WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.vhf" line 262: Instantiating black box module <SDC_FileReader>.
     Set user-defined property "HU_SET =  XLXI_20_0" for instance <XLXI_20> in unit <WAV_reader>.
-WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main/WAV_reader.vhf" line 319: Instantiating black box module <DACWrite>.
+WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.vhf" line 319: Instantiating black box module <DACWrite>.
 Entity <WAV_reader> analyzed. Unit <WAV_reader> generated.
 
 Analyzing generic Entity <IFD_MXILINX_WAV_reader> in library <work> (Architecture <behavioral>).
@@ -142,11 +142,8 @@ Analyzing generic Entity <IFD_MXILINX_WAV_reader> in library <work> (Architectur
 Entity <IFD_MXILINX_WAV_reader> analyzed. Unit <IFD_MXILINX_WAV_reader> generated.
 
 Analyzing Entity <naszregister> in library <work> (Architecture <behavioral>).
-INFO:Xst:2679 - Register <sixteen> in unit <naszregister> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <Data<3>> in unit <naszregister> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <Data<2>> in unit <naszregister> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <Data<1>> in unit <naszregister> has a constant value of 0 during circuit operation. The register is replaced by logic.
-INFO:Xst:2679 - Register <Data<0>> in unit <naszregister> has a constant value of 0 during circuit operation. The register is replaced by logic.
+WARNING:Xst:819 - "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/register.vhd" line 107: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <readState>, <freq>, <data_size_vec>
 Entity <naszregister> analyzed. Unit <naszregister> generated.
 
 
@@ -157,7 +154,7 @@ Entity <naszregister> analyzed. Unit <naszregister> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <naszregister>.
-    Related source file is "C:/XilinxPrj/UCISW2-main/register.vhd".
+    Related source file is "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/register.vhd".
     Register <Line<16>> equivalent to <freq<0>> has been removed
     Register <Line<26>> equivalent to <freq<10>> has been removed
     Register <Line<27>> equivalent to <freq<11>> has been removed
@@ -190,59 +187,80 @@ Synthesizing Unit <naszregister>.
     Register <Line<23>> equivalent to <freq<7>> has been removed
     Register <Line<24>> equivalent to <freq<8>> has been removed
     Register <Line<25>> equivalent to <freq<9>> has been removed
-    Using one-hot encoding for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 82                                             |
+    | Inputs             | 18                                             |
+    | Outputs            | 21                                             |
+    | Clock              | Clk_50MHz                 (rising_edge)        |
+    | Clock enable       | Start                     (positive)           |
+    | Reset              | Reset                     (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
     Using one-hot encoding for signal <readState>.
     Found 4-bit register for signal <Cmd>.
     Found 16-bit register for signal <Line<63:48>>.
     Found 16-bit register for signal <Line<15:0>>.
     Found 4-bit register for signal <Addr>.
-    Found 8-bit register for signal <Data<11:4>>.
+    Found 12-bit register for signal <Data>.
+    Found 16-bit register for signal <conversion>.
+    Found 16-bit adder for signal <conversion$addsub0000> created at line 349.
     Found 64-bit up counter for signal <counter>.
+    Found 12-bit adder for signal <Data_11$add0000> created at line 343.
     Found 32-bit register for signal <data_counter>.
-    Found 32-bit adder for signal <data_counter$addsub0000> created at line 323.
+    Found 32-bit adder for signal <data_counter$addsub0000> created at line 356.
     Found 32-bit register for signal <data_size_vec>.
-    Found 64-bit comparator not equal for signal <data_size_vec_0$cmp_ne0000> created at line 274.
-    Found 64-bit comparator not equal for signal <data_size_vec_10$cmp_ne0000> created at line 275.
-    Found 64-bit comparator not equal for signal <data_size_vec_19$cmp_ne0000> created at line 277.
-    Found 64-bit comparator not equal for signal <data_size_vec_24$cmp_ne0000> created at line 279.
+    Found 64-bit comparator not equal for signal <data_size_vec_0$cmp_ne0000> created at line 300.
+    Found 64-bit comparator not equal for signal <data_size_vec_10$cmp_ne0000> created at line 301.
+    Found 64-bit comparator not equal for signal <data_size_vec_19$cmp_ne0000> created at line 303.
+    Found 64-bit comparator not equal for signal <data_size_vec_24$cmp_ne0000> created at line 305.
     Found 32-bit register for signal <freq>.
-    Found 64-bit comparator not equal for signal <freq_0$cmp_ne0000> created at line 248.
-    Found 64-bit comparator not equal for signal <freq_10$cmp_ne0000> created at line 250.
-    Found 64-bit comparator not equal for signal <freq_20$cmp_ne0000> created at line 253.
-    Found 64-bit comparator not equal for signal <freq_24$cmp_ne0000> created at line 256.
+    Found 64-bit comparator not equal for signal <freq_0$cmp_ne0000> created at line 275.
+    Found 64-bit comparator not equal for signal <freq_10$cmp_ne0000> created at line 277.
+    Found 64-bit comparator not equal for signal <freq_20$cmp_ne0000> created at line 280.
+    Found 64-bit comparator not equal for signal <freq_24$cmp_ne0000> created at line 283.
     Found 64-bit up counter for signal <freqCounter>.
     Found 1-bit register for signal <incremented>.
-    Found 64-bit comparator not equal for signal <Line_2$cmp_ne0000> created at line 263.
-    Found 64-bit comparator equal for signal <Line_60$cmp_eq0000> created at line 238.
-    Found 64-bit comparator not equal for signal <Line_8$cmp_ne0000> created at line 264.
-    Found 5-bit register for signal <nextReadState>.
-    Found 10-bit register for signal <nextState>.
-    Found 64-bit comparator equal for signal <nextState$cmp_eq0000> created at line 128.
-    Found 64-bit comparator equal for signal <nextState$cmp_eq0001> created at line 133.
-    Found 64-bit comparator equal for signal <nextState$cmp_eq0002> created at line 138.
-    Found 64-bit comparator equal for signal <nextState$cmp_eq0003> created at line 143.
-    Found 64-bit comparator greatequal for signal <nextState$cmp_ge0000> created at line 119.
-    Found 64-bit comparator greatequal for signal <nextState$cmp_ge0001> created at line 161.
-    Found 32-bit comparator greatequal for signal <nextState$cmp_ge0002> created at line 168.
-    Found 5-bit register for signal <readState>.
-    Found 10-bit register for signal <state>.
+    Found 64-bit comparator not equal for signal <Line_2$cmp_ne0000> created at line 290.
+    Found 64-bit comparator equal for signal <Line_60$cmp_eq0000> created at line 265.
+    Found 64-bit comparator not equal for signal <Line_8$cmp_ne0000> created at line 293.
+    Found 6-bit register for signal <nextReadState>.
+    Found 6-bit register for signal <readState>.
+    Found 1-bit register for signal <sixteen>.
+    Found 64-bit comparator equal for signal <state$cmp_eq0000> created at line 129.
+    Found 64-bit comparator equal for signal <state$cmp_eq0001> created at line 134.
+    Found 64-bit comparator equal for signal <state$cmp_eq0002> created at line 139.
+    Found 64-bit comparator equal for signal <state$cmp_eq0003> created at line 144.
+    Found 64-bit comparator greatequal for signal <state$cmp_ge0000> created at line 120.
+    Found 64-bit comparator greatequal for signal <state$cmp_ge0001> created at line 175.
+    Found 64-bit comparator greatequal for signal <state$cmp_ge0002> created at line 176.
+    Found 64-bit comparator greatequal for signal <state$cmp_ge0003> created at line 178.
+    Found 64-bit comparator greatequal for signal <state$cmp_ge0004> created at line 180.
+    Found 64-bit comparator greatequal for signal <state$cmp_ge0005> created at line 182.
+    Found 32-bit comparator greatequal for signal <state$cmp_ge0006> created at line 190.
     Found 1-bit register for signal <stereo>.
-    Found 64-bit comparator not equal for signal <stereo$cmp_ne0000> created at line 238.
+    Found 64-bit comparator not equal for signal <stereo$cmp_ne0000> created at line 265.
     Summary:
+	inferred   1 Finite State Machine(s).
 	inferred   2 Counter(s).
-	inferred 176 D-type flip-flop(s).
-	inferred   1 Adder/Subtractor(s).
-	inferred  19 Comparator(s).
+	inferred 179 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  23 Comparator(s).
 Unit <naszregister> synthesized.
 
 
 Synthesizing Unit <IFD_MXILINX_WAV_reader>.
-    Related source file is "C:/XilinxPrj/UCISW2-main/WAV_reader.vhf".
+    Related source file is "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.vhf".
 Unit <IFD_MXILINX_WAV_reader> synthesized.
 
 
 Synthesizing Unit <WAV_reader>.
-    Related source file is "C:/XilinxPrj/UCISW2-main/WAV_reader.vhf".
+    Related source file is "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/WAV_reader.vhf".
 WARNING:Xst:646 - Signal <XLXN_104> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <WAV_reader> synthesized.
 
@@ -251,20 +269,22 @@ Unit <WAV_reader> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 1
+# Adders/Subtractors                                   : 3
+ 12-bit adder                                          : 1
+ 16-bit adder                                          : 1
  32-bit adder                                          : 1
 # Counters                                             : 2
  64-bit up counter                                     : 2
-# Registers                                            : 113
- 1-bit register                                        : 106
- 10-bit register                                       : 2
+# Registers                                            : 117
+ 1-bit register                                        : 111
+ 16-bit register                                       : 1
  32-bit register                                       : 1
  4-bit register                                        : 2
- 5-bit register                                        : 2
-# Comparators                                          : 19
+ 6-bit register                                        : 2
+# Comparators                                          : 23
  32-bit comparator greatequal                          : 1
  64-bit comparator equal                               : 5
- 64-bit comparator greatequal                          : 2
+ 64-bit comparator greatequal                          : 6
  64-bit comparator not equal                           : 11
 
 =========================================================================
@@ -273,36 +293,51 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <XLXI_24/state/FSM> on signal <state[1:10]> with one-hot encoding.
+--------------------------
+ State      | Encoding
+--------------------------
+ idle       | 0000000001
+ start_read | 0000000010
+ canal      | 0000000100
+ sample     | 0000001000
+ bits       | 0000010000
+ data_size  | 0000100000
+ load       | 0001000000
+ loaded     | 0010000000
+ play       | 1000000000
+ play_end   | 0100000000
+--------------------------
 Reading core <LCD1x64.ngc>.
 Reading core <SDC_FileReader.ngc>.
 Reading core <DACWrite.ngc>.
 Loading core <LCD1x64> for timing and area information for instance <XLXI_1>.
 Loading core <SDC_FileReader> for timing and area information for instance <XLXI_3>.
 Loading core <DACWrite> for timing and area information for instance <XLXI_21>.
-INFO:Xst:2261 - The FF/Latch <Cmd_1> in Unit <XLXI_24> is equivalent to the following FF/Latch, which will be removed : <Addr_1> 
-INFO:Xst:2261 - The FF/Latch <nextReadState_2> in Unit <XLXI_24> is equivalent to the following FF/Latch, which will be removed : <nextReadState_4> 
 INFO:Xst:2261 - The FF/Latch <Cmd_2> in Unit <XLXI_24> is equivalent to the following 3 FFs/Latches, which will be removed : <Cmd_3> <Addr_2> <Addr_3> 
+INFO:Xst:2261 - The FF/Latch <Cmd_1> in Unit <XLXI_24> is equivalent to the following FF/Latch, which will be removed : <Addr_1> 
 WARNING:Xst:1426 - The value init of the FF/Latch Cmd_1 hinder the constant cleaning in the block XLXI_24.
    You should achieve better results by setting this init to 1.
-WARNING:Xst:1293 - FF/Latch <nextReadState_2> has a constant value of 0 in block <XLXI_24>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <Cmd_2> has a constant value of 0 in block <XLXI_24>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readState_2> has a constant value of 0 in block <XLXI_24>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readState_4> has a constant value of 0 in block <XLXI_24>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 1
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 3
+ 12-bit adder                                          : 1
+ 16-bit adder                                          : 1
  32-bit adder                                          : 1
 # Counters                                             : 2
  64-bit up counter                                     : 2
-# Registers                                            : 177
- Flip-Flops                                            : 177
-# Comparators                                          : 19
+# Registers                                            : 180
+ Flip-Flops                                            : 180
+# Comparators                                          : 23
  32-bit comparator greatequal                          : 1
  64-bit comparator equal                               : 5
- 64-bit comparator greatequal                          : 2
+ 64-bit comparator greatequal                          : 6
  64-bit comparator not equal                           : 11
 
 =========================================================================
@@ -314,15 +349,15 @@ WARNING:Xst:1426 - The value init of the FF/Latch Cmd_1 hinder the constant clea
    You should achieve better results by setting this init to 1.
 WARNING:Xst:1426 - The value init of the FF/Latch Addr_1 hinder the constant cleaning in the block naszregister.
    You should achieve better results by setting this init to 1.
-WARNING:Xst:1293 - FF/Latch <nextReadState_2> has a constant value of 0 in block <naszregister>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <nextReadState_4> has a constant value of 0 in block <naszregister>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Cmd_2> has a constant value of 0 in block <naszregister>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <Cmd_2> has a constant value of 0 in block <naszregister>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Cmd_3> has a constant value of 0 in block <naszregister>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Addr_2> has a constant value of 0 in block <naszregister>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Addr_3> has a constant value of 0 in block <naszregister>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readState_2> has a constant value of 0 in block <naszregister>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <readState_4> has a constant value of 0 in block <naszregister>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <Cmd_1> in Unit <naszregister> is equivalent to the following FF/Latch, which will be removed : <Addr_1> 
+WARNING:Xst:2677 - Node <conversion_12> of sequential type is unconnected in block <naszregister>.
+WARNING:Xst:2677 - Node <conversion_13> of sequential type is unconnected in block <naszregister>.
+WARNING:Xst:2677 - Node <conversion_14> of sequential type is unconnected in block <naszregister>.
+WARNING:Xst:2677 - Node <conversion_15> of sequential type is unconnected in block <naszregister>.
 
 Optimizing unit <WAV_reader> ...
 
@@ -332,7 +367,7 @@ Optimizing unit <IFD_MXILINX_WAV_reader> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block WAV_reader, actual ratio is 27.
+Found area constraint ratio of 100 (+ 5) on block WAV_reader, actual ratio is 29.
 INFO:Xst:2260 - The FF/Latch <cntDigit_0> in Unit <XLXI_1> is equivalent to the following 4 FFs/Latches : <cntDigit_0_1> <cntDigit_0_2> <cntDigit_0_3> <cntDigit_0_4> 
 INFO:Xst:2260 - The FF/Latch <cntDigit_1> in Unit <XLXI_1> is equivalent to the following 2 FFs/Latches : <cntDigit_1_1> <cntDigit_1_2> 
 INFO:Xst:2260 - The FF/Latch <State_16> in Unit <XLXI_1> is equivalent to the following FF/Latch : <State_16_1> 
@@ -352,8 +387,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 296
- Flip-Flops                                            : 296
+# Registers                                            : 309
+ Flip-Flops                                            : 309
 
 =========================================================================
 
@@ -382,37 +417,37 @@ Design Statistics
 # IOs                              : 34
 
 Cell Usage :
-# BELS                             : 3500
+# BELS                             : 3808
 #      BUF                         : 4
 #      GND                         : 5
-#      INV                         : 68
-#      LUT1                        : 269
-#      LUT2                        : 307
-#      LUT2_D                      : 9
-#      LUT2_L                      : 29
-#      LUT3                        : 358
-#      LUT3_D                      : 11
+#      INV                         : 77
+#      LUT1                        : 288
+#      LUT2                        : 304
+#      LUT2_D                      : 11
+#      LUT2_L                      : 28
+#      LUT3                        : 381
+#      LUT3_D                      : 12
 #      LUT3_L                      : 11
-#      LUT4                        : 956
-#      LUT4_D                      : 68
-#      LUT4_L                      : 98
+#      LUT4                        : 1080
+#      LUT4_D                      : 74
+#      LUT4_L                      : 102
 #      MULT_AND                    : 10
-#      MUXCY                       : 761
+#      MUXCY                       : 861
 #      MUXF5                       : 80
 #      MUXF6                       : 19
 #      MUXF7                       : 5
 #      OR2                         : 2
 #      VCC                         : 5
-#      XORCY                       : 425
-# FlipFlops/Latches                : 902
-#      FD                          : 83
+#      XORCY                       : 449
+# FlipFlops/Latches                : 915
+#      FD                          : 74
 #      FDCE                        : 1
-#      FDE                         : 330
+#      FDE                         : 350
 #      FDR                         : 77
-#      FDRE                        : 242
+#      FDRE                        : 245
 #      FDRS                        : 15
 #      FDRSE                       : 8
-#      FDS                         : 142
+#      FDS                         : 141
 #      FDSE                        : 4
 # RAMS                             : 1
 #      RAMB16_S9_S9                : 1
@@ -429,9 +464,9 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                     1281  out of   4656    27%  
- Number of Slice Flip Flops:            901  out of   9312     9%  
- Number of 4 input LUTs:               2184  out of   9312    23%  
+ Number of Slices:                     1362  out of   4656    29%  
+ Number of Slice Flip Flops:            914  out of   9312     9%  
+ Number of 4 input LUTs:               2368  out of   9312    25%  
  Number of IOs:                          34
  Number of bonded IOBs:                  34  out of    232    14%  
     IOB Flip Flops:                       1
@@ -459,7 +494,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-Clk_50MHz                          | BUFGP                  | 903   |
+Clk_50MHz                          | BUFGP                  | 916   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -474,7 +509,7 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 12.723ns (Maximum Frequency: 78.597MHz)
+   Minimum period: 12.738ns (Maximum Frequency: 78.508MHz)
    Minimum input arrival time before clock: 10.170ns
    Maximum output required time after clock: 7.533ns
    Maximum combinational path delay: 7.263ns
@@ -485,10 +520,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Clk_50MHz'
-  Clock period: 12.723ns (frequency: 78.597MHz)
-  Total number of paths / destination ports: 83026 / 1990
+  Clock period: 12.738ns (frequency: 78.508MHz)
+  Total number of paths / destination ports: 85631 / 2029
 -------------------------------------------------------------------------
-Delay:               12.723ns (Levels of Logic = 20)
+Delay:               12.738ns (Levels of Logic = 20)
   Source:            XLXI_3/XLXI_89/cntBytes_5 (FF)
   Destination:       XLXI_3/XLXI_89/cntBytes_11 (FF)
   Source Clock:      Clk_50MHz rising
@@ -502,9 +537,9 @@ Delay:               12.723ns (Levels of Logic = 20)
      LUT2_L:I0->LO         1   0.704   0.104  XLXI_89/Full512_mux0000212 (XLXI_89/Full512_mux0000212)
      LUT4:I3->O            2   0.704   0.451  XLXI_89/Full512_mux0000217 (XLXI_89/Full512_mux0000217)
      LUT4_D:I3->O          5   0.704   0.712  XLXI_89/NextState_0_cmp_eq000011 (XLXI_89/N3)
-     LUT3:I1->O           38   0.704   1.268  XLXI_89/iDO_Rdy1 (DO_Rdy)
+     LUT3:I1->O           84   0.704   1.283  XLXI_89/iDO_Rdy1 (DO_Rdy)
      end scope: 'XLXI_3'
-     LUT4:I3->O            4   0.704   0.762  XLXI_24/Pop_and00001 (XLXN_87)
+     LUT4:I3->O            4   0.704   0.762  XLXI_24/Pop_and000129 (XLXN_87)
      begin scope: 'XLXI_3'
      LUT4:I0->O           14   0.704   1.035  XLXI_89/DoPOP_and00001 (XLXI_89/DoPOP)
      LUT3:I2->O            1   0.704   0.000  XLXI_89/Mcount_cntBytes_lut<0> (XLXI_89/Mcount_cntBytes_lut<0>)
@@ -522,12 +557,12 @@ Delay:               12.723ns (Levels of Logic = 20)
      XORCY:CI->O           1   0.804   0.000  XLXI_89/Mcount_cntBytes_xor<11> (XLXI_89/Result<11>)
      FDRE:D                    0.308          XLXI_89/cntBytes_11
     ----------------------------------------
-    Total                     12.723ns (7.685ns logic, 5.038ns route)
-                                       (60.4% logic, 39.6% route)
+    Total                     12.738ns (7.685ns logic, 5.053ns route)
+                                       (60.3% logic, 39.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk_50MHz'
-  Total number of paths / destination ports: 94 / 88
+  Total number of paths / destination ports: 97 / 91
 -------------------------------------------------------------------------
 Offset:              10.170ns (Levels of Logic = 9)
   Source:            SW_0 (PAD)
@@ -554,7 +589,7 @@ Offset:              10.170ns (Levels of Logic = 9)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk_50MHz'
-  Total number of paths / destination ports: 39 / 16
+  Total number of paths / destination ports: 40 / 17
 -------------------------------------------------------------------------
 Offset:              7.533ns (Levels of Logic = 4)
   Source:            XLXI_3/XLXI_96/I_Transc/State_3 (FF)
@@ -586,7 +621,7 @@ Delay:               7.263ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     BUFGP:I->O          905   1.457   1.410  Clk_50MHz_BUFGP (Clk_50MHz_BUFGP)
+     BUFGP:I->O          918   1.457   1.410  Clk_50MHz_BUFGP (Clk_50MHz_BUFGP)
      begin scope: 'XLXI_21'
      INV:I->O              1   0.704   0.420  SPI_SCK1_INV_0 (SPI_SCK)
      end scope: 'XLXI_21'
@@ -598,14 +633,14 @@ Delay:               7.263ns (Levels of Logic = 4)
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.04 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.22 secs
  
 --> 
 
-Total memory usage is 4564620 kilobytes
+Total memory usage is 4564652 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   19 (   0 filtered)
-Number of infos    :   21 (   0 filtered)
+Number of warnings :   17 (   0 filtered)
+Number of infos    :   15 (   0 filtered)
 

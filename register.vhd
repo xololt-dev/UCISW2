@@ -61,11 +61,12 @@ architecture Behavioral of naszregister is
 	signal counter : unsigned (63 downto 0) := (others => '0');
 
 	signal sixteen : std_logic := '0';
+	signal conversion : unsigned (15 downto 0) := (others => '0');
 	signal stereo : std_logic := '0';
 	signal freq : std_logic_vector (31 downto 0) := (others => '0');
 	signal freqCounter : unsigned (63 downto 0) := (others => '0');
 	signal data_size_vec : std_logic_vector (31 downto 0) := (others => '0');
-	signal data_counter : unsigned (31 downto 0) := (others => '0');	
+	signal data_counter : unsigned (31 downto 0) := (others => '0');
 	
 begin
 	process1 : process(Clk_50MHz)
@@ -97,7 +98,7 @@ begin
 		if rising_edge(Clk_50MHz) then
 			if Reset = '1' or state = PLAY then
 				freqCounter <= (others => '0');
-			elsif state = LOADED then
+			elsif state = LOADED or state = LOAD then
 				freqCounter <= freqCounter + 1;
 			end if;
 		end if;
@@ -105,7 +106,7 @@ begin
 	
 	process2 : process(Clk_50MHz, state, DO, DO_Rdy, Busy, counter, incremented, freqCounter, data_counter)
 	begin
-		if rising_edge(Clk_50MHz) then
+		--if rising_edge(Clk_50MHz) then
 			nextState <= state;
 
 			case state is
@@ -196,7 +197,7 @@ begin
 					nextState <= IDLE;
 
 			end case;
-		end if;
+		--end if;
 	
 	end process process2;
 	
@@ -327,7 +328,7 @@ begin
 	begin
 		if rising_edge(Clk_50MHz) then
 			if DO_Rdy = '1' then
-				if state = LOAD then --if state = LOAD then
+				if state = LOAD then
 					-- 8b - TODO: z 16b
 					
 					-- mono 8b -> DO(7 downto 0) & 0000
@@ -335,22 +336,32 @@ begin
 					-- stereo 8b -> DO(7 downto 0) & 0000
 					-- stereo 16b -> DO(7 downto 0) & DO(7 downto 4)
 					
+					-- 16b jest uint!
 					if sixteen = '1' then
 						if readState = LEFT_EXT or readState = RIGHT_EXT then 
-							Data(11 downto 4) <= DO(7 downto 0);
+							if DO(7) = '1' then
+								Data(11 downto 0) <= std_logic_vector(to_unsigned(to_integer(unsigned(DO)) + to_integer(conversion) + 4096, 12));
+							else 
+								Data(11 downto 4) <= DO(7 downto 0);
+							end if;
 						elsif readState = LEFT or readState = RIGHT then
 							Data(3 downto 0) <= DO(7 downto 4);
+							conversion <= conversion + unsigned(DO(7 downto 4));
 						end if;
 					else
 						Data(11 downto 0) <= DO(7 downto 0) & "0000";
 					end if;
 					
-					data_counter <= data_counter + 1;
+					if readState /= IDLE and readState /= DONE then
+						data_counter <= data_counter + 1;
+					end if;
 					
+				elsif state = LOADED then
+					conversion <= (others => '0');
 				elsif state = IDLE then
 					Data <= (others => '0');
 					data_counter <= (others => '0');
-				end if;
+				end if;				
 			end if;
 		end if;
 	end process process4;
@@ -358,7 +369,7 @@ begin
 	process7 : process(Clk_50MHz, state)
 	begin
 		if rising_edge(Clk_50MHz) then
-			if state = LOAD then
+			if state = LOAD or state = PLAY then
 				-- TODO Stereo ?
 				-- C (lewe) = 0010, D (prawe) = 0011
 				
@@ -375,16 +386,12 @@ begin
 		end if;
 		
 	end process process7;
-	
-	--Cmd <= "0000" when (readState = LEFT or readState = LEFT_EXT) and state = PLAY 
-		--elsif state = PLAY "0010";
-	-- C (lewe) = 0010, D (prawe) = 0011
-	-- Addr <= "0010" when (readState = LEFT or readState = LEFT_EXT) and state = PLAY 
-		--else "0011";
 
 	-- Czy przy data nie za szybko pop
-	Pop <= '1' when (state /= IDLE and state /= LOADED and state /= PLAY) and DO_Rdy = '1'
-      else '0';
+	-- Pop <= '1' when (state /= IDLE and state /= LOADED and state /= PLAY) and DO_Rdy = '1'
+		
+	Pop <= '1' when (state = START_READ or state = CANAL or state = SAMPLE or state = BITS or state = DATA_SIZE or (state = LOAD and (readState /= IDLE and readState /= DONE))) and DO_Rdy = '1'
+		else '0';
 
 	SRate_Tick <= '1' when state = PLAY 
 		else '0';
