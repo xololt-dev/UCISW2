@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/registerTest_isim_beh.exe" -prj "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/registerTest_beh.prj" "work.registerTest" 
+-intstyle "ise" -incremental -o "/home/xololt/repos/UCISW2-main-newer-kubica-edition/UCISW2-main-newer/registerTest_isim_beh.exe" -prj "/home/xololt/repos/UCISW2-main-newer-kubica-edition/UCISW2-main-newer/registerTest_beh.prj" "work.registerTest" 

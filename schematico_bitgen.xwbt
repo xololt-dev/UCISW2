@@ -1,6 +1,6 @@
 INTSTYLE=ise
-INFILE=C:\XilinxPrj\UCISW2-main-newer\WAV_reader.ncd
-OUTFILE=C:\XilinxPrj\UCISW2-main-newer\WAV_reader.bit
+INFILE=C:\XilinxPrj\UCISW2-main-newer\schematico.ncd
+OUTFILE=C:\XilinxPrj\UCISW2-main-newer\schematico.bit
 FAMILY=Spartan3E
 PART=xc3s500e-4fg320
 WORKINGDIR=C:\XilinxPrj\UCISW2-main-newer

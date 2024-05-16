@@ -1,0 +1,2 @@
+vhdtdtfi -lib work fileNameReader.vhd -prj OdtwarzaczWAV -o fileNameReader.spl -module fileNameReader -template C:/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e fileNameReader.spl C:/XilinxPrj/UCISW2-main-newer/fileNameReader.sym 

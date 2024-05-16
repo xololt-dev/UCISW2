@@ -1,0 +1,1 @@
+sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl WAV_reader_total_drc.vhf -w C:/XilinxPrj/UCISW2-main-newer/WAV_reader_total.sch 

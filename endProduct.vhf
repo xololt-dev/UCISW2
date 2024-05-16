@@ -6,13 +6,13 @@
 -- /___/  \  /    Vendor: Xilinx 
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
---  /   /         Filename : WAV_reader.vhf
--- /___/   /\     Timestamp : 05/16/2024 14:03:36
+--  /   /         Filename : endProduct.vhf
+-- /___/   /\     Timestamp : 05/16/2024 14:07:51
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl C:/XilinxPrj/UCISW2-main-newer/WAV_reader.vhf -w C:/XilinxPrj/UCISW2-main-newer/WAV_reader.sch
---Design Name: WAV_reader
+--Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl C:/XilinxPrj/UCISW2-main-newer/endProduct.vhf -w C:/XilinxPrj/UCISW2-main-newer/endProduct.sch
+--Design Name: endProduct
 --Device: spartan3e
 --Purpose:
 --    This vhdl netlist is translated from an ECS schematic. It can be 
@@ -25,7 +25,7 @@ use ieee.numeric_std.ALL;
 library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
-entity WAV_reader is
+entity WAV_reader_MUSER_endProduct is
    port ( Abort       : in    std_logic; 
           Clk_50MHz   : in    std_logic; 
           FName       : in    std_logic_vector (7 downto 0); 
@@ -46,9 +46,9 @@ entity WAV_reader is
           SPI_MOSI    : out   std_logic; 
           SPI_SCK     : out   std_logic; 
           SPI_SS_B    : out   std_logic);
-end WAV_reader;
+end WAV_reader_MUSER_endProduct;
 
-architecture BEHAVIORAL of WAV_reader is
+architecture BEHAVIORAL of WAV_reader_MUSER_endProduct is
    attribute BOX_TYPE   : string ;
    signal FExt        : std_logic_vector (1 downto 0);
    signal XLXN_84     : std_logic;
@@ -187,6 +187,157 @@ begin
                 Pop=>XLXN_87,
                 SRate_Tick=>XLXN_93,
                 Work=>OutputLED(4));
+   
+end BEHAVIORAL;
+
+
+
+library ieee;
+use ieee.std_logic_1164.ALL;
+use ieee.numeric_std.ALL;
+library UNISIM;
+use UNISIM.Vcomponents.ALL;
+
+entity endProduct is
+   port ( BTN_EAST    : in    std_logic; 
+          BTN_SOUTH   : in    std_logic; 
+          BTN_WEST    : in    std_logic; 
+          Clk_50MHz   : in    std_logic; 
+          PS2_Clk     : in    std_logic; 
+          PS2_Data    : in    std_logic; 
+          SDC_MISO    : in    std_logic; 
+          SPI_MISO    : in    std_logic; 
+          AD_CONV     : out   std_logic; 
+          AMP_CS      : out   std_logic; 
+          DAC_CLR     : out   std_logic; 
+          DAC_CS      : out   std_logic; 
+          FPGA_INIT_B : out   std_logic; 
+          LCD_E       : out   std_logic; 
+          LCD_RS      : out   std_logic; 
+          LCD_RW      : out   std_logic; 
+          SDC_MOSI    : out   std_logic; 
+          SDC_SCK     : out   std_logic; 
+          SDC_SS      : out   std_logic; 
+          SF_CE       : out   std_logic; 
+          SPI_MOSI    : out   std_logic; 
+          SPI_SCK     : out   std_logic; 
+          SPI_SS_B    : out   std_logic; 
+          LCD_D       : inout std_logic_vector (3 downto 0));
+end endProduct;
+
+architecture BEHAVIORAL of endProduct is
+   signal XLXN_1      : std_logic_vector (63 downto 0);
+   signal XLXN_2      : std_logic_vector (15 downto 0);
+   signal XLXN_4      : std_logic_vector (7 downto 0);
+   signal XLXN_5      : std_logic;
+   signal XLXN_6      : std_logic;
+   signal XLXN_7      : std_logic;
+   signal XLXN_11     : std_logic_vector (7 downto 0);
+   component WAV_reader_MUSER_endProduct
+      port ( SDC_MISO    : in    std_logic; 
+             Abort       : in    std_logic; 
+             Reset       : in    std_logic; 
+             SPI_MISO    : in    std_logic; 
+             Clk_50MHz   : in    std_logic; 
+             Start       : in    std_logic; 
+             FName       : in    std_logic_vector (7 downto 0); 
+             SDC_MOSI    : out   std_logic; 
+             SDC_SS      : out   std_logic; 
+             SDC_SCK     : out   std_logic; 
+             OutputLCD   : out   std_logic_vector (63 downto 0); 
+             SPI_MOSI    : out   std_logic; 
+             SPI_SCK     : out   std_logic; 
+             DAC_CS      : out   std_logic; 
+             DAC_CLR     : out   std_logic; 
+             SPI_SS_B    : out   std_logic; 
+             AMP_CS      : out   std_logic; 
+             AD_CONV     : out   std_logic; 
+             FPGA_INIT_B : out   std_logic; 
+             OutputLED   : out   std_logic_vector (4 downto 0));
+   end component;
+   
+   component LCD1x64
+      port ( Clk_50MHz : in    std_logic; 
+             Reset     : in    std_logic; 
+             Line      : in    std_logic_vector (63 downto 0); 
+             Blank     : in    std_logic_vector (15 downto 0); 
+             LCD_D     : inout std_logic_vector (3 downto 0); 
+             LCD_E     : out   std_logic; 
+             LCD_RW    : out   std_logic; 
+             LCD_RS    : out   std_logic; 
+             SF_CE     : out   std_logic);
+   end component;
+   
+   component PS2_Kbd
+      port ( PS2_Clk   : in    std_logic; 
+             PS2_Data  : in    std_logic; 
+             Clk_50MHz : in    std_logic; 
+             E0        : out   std_logic; 
+             F0        : out   std_logic; 
+             DO_Rdy    : out   std_logic; 
+             DO        : out   std_logic_vector (7 downto 0); 
+             Clk_Sys   : in    std_logic);
+   end component;
+   
+   component fileNameReader
+      port ( E0     : in    std_logic; 
+             F0     : in    std_logic; 
+             DO_Rdy : in    std_logic; 
+             DO     : in    std_logic_vector (7 downto 0); 
+             FName  : out   std_logic_vector (7 downto 0));
+   end component;
+   
+begin
+   XLXN_2(15 downto 0) <= x"0000";
+   XLXI_1 : WAV_reader_MUSER_endProduct
+      port map (Abort=>BTN_EAST,
+                Clk_50MHz=>Clk_50MHz,
+                FName(7 downto 0)=>XLXN_11(7 downto 0),
+                Reset=>BTN_SOUTH,
+                SDC_MISO=>SDC_MISO,
+                SPI_MISO=>SPI_MISO,
+                Start=>BTN_WEST,
+                AD_CONV=>AD_CONV,
+                AMP_CS=>AMP_CS,
+                DAC_CLR=>DAC_CLR,
+                DAC_CS=>DAC_CS,
+                FPGA_INIT_B=>FPGA_INIT_B,
+                OutputLCD(63 downto 0)=>XLXN_1(63 downto 0),
+                OutputLED=>open,
+                SDC_MOSI=>SDC_MOSI,
+                SDC_SCK=>SDC_SCK,
+                SDC_SS=>SDC_SS,
+                SPI_MOSI=>SPI_MOSI,
+                SPI_SCK=>SPI_SCK,
+                SPI_SS_B=>SPI_SS_B);
+   
+   XLXI_2 : LCD1x64
+      port map (Blank(15 downto 0)=>XLXN_2(15 downto 0),
+                Clk_50MHz=>Clk_50MHz,
+                Line(63 downto 0)=>XLXN_1(63 downto 0),
+                Reset=>BTN_SOUTH,
+                LCD_E=>LCD_E,
+                LCD_RS=>LCD_RS,
+                LCD_RW=>LCD_RW,
+                SF_CE=>SF_CE,
+                LCD_D(3 downto 0)=>LCD_D(3 downto 0));
+   
+   XLXI_19 : PS2_Kbd
+      port map (Clk_Sys=>Clk_50MHz,
+                Clk_50MHz=>Clk_50MHz,
+                PS2_Clk=>PS2_Clk,
+                PS2_Data=>PS2_Data,
+                DO(7 downto 0)=>XLXN_4(7 downto 0),
+                DO_Rdy=>XLXN_7,
+                E0=>XLXN_5,
+                F0=>XLXN_6);
+   
+   XLXI_20 : fileNameReader
+      port map (DO(7 downto 0)=>XLXN_4(7 downto 0),
+                DO_Rdy=>XLXN_7,
+                E0=>XLXN_5,
+                F0=>XLXN_6,
+                FName(7 downto 0)=>XLXN_11(7 downto 0));
    
 end BEHAVIORAL;
 

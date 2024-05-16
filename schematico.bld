@@ -1,0 +1,98 @@
+Release 14.7 ngdbuild P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+-intstyle ise -dd _ngo -nt timestamp -uc GenIO.ucf -uc LCD.ucf -uc
+PS2_USB_SDC.ucf -uc ADC_DAC.ucf -p xc3s500e-fg320-4 schematico.ngc
+schematico.ngd
+
+Reading NGO file "C:/XilinxPrj/UCISW2-main-newer/schematico.ngc" ...
+Loading design module "C:\XilinxPrj\UCISW2-main-newer/LCD1x64.ngc"...
+Loading design module "C:\XilinxPrj\UCISW2-main-newer/PS2_Kbd.ngc"...
+Loading design module "C:\XilinxPrj\UCISW2-main-newer/DACWrite.ngc"...
+Loading design module "C:\XilinxPrj\UCISW2-main-newer/SDC_FileReader.ngc"...
+Gathering constraint information from source properties...
+Done.
+INFO:NgdBuild:889 - Pad net 'N0' is not connected to an external port in this
+   design.  A new port 'N0' has been added and is connected to this signal.
+
+Annotating constraints to design from ucf file "GenIO.ucf" ...
+Annotating constraints to design from ucf file "LCD.ucf" ...
+Annotating constraints to design from ucf file "PS2_USB_SDC.ucf" ...
+Annotating constraints to design from ucf file "ADC_DAC.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+INFO:ConstraintSystem - The Period constraint <NET "Clk_50MHz" PERIOD = 20.0ns
+   HIGH 50%;> [GenIO.ucf(3)], is specified using the Net Period method which is
+   not recommended. Please use the Timespec PERIOD method.
+
+Done...
+
+Checking expanded design ...
+ERROR:NgdBuild:455 - logical net 'N0' has multiple driver(s):
+     pin G on block XST_GND with type GND,
+     pin PAD on block N0 with type PAD
+ERROR:NgdBuild:924 - input pad net 'N0' is driving non-buffer primitives:
+     pin G on block XST_GND with type GND,
+     pin CI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<0> with
+   type MUXCY,
+     pin CI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_xor<0> with
+   type XORCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<1> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<2> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<3> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<4> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<5> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<6> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<7> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<8> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<9> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<10> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<11> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<12> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<13> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<14> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<15> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<16> with
+   type MUXCY,
+     pin DI on block XLXI_27/XLXI_24/Madd_data_counter_addsub0000_cy<17> with
+   type MUXCY
+WARNING:NgdBuild:452 - logical net 'N30' has no driver
+WARNING:NgdBuild:452 - logical net 'N31' has no driver
+WARNING:NgdBuild:452 - logical net 'N32' has no driver
+WARNING:NgdBuild:452 - logical net 'N33' has no driver
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     2
+  Number of warnings:   4
+
+Total memory usage is 4414856 kilobytes
+
+Total REAL time to NGDBUILD completion:  2 sec
+Total CPU time to NGDBUILD completion:   2 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
+
+Writing NGDBUILD log file "schematico.bld"...

@@ -61,7 +61,6 @@ architecture Behavioral of naszregister is
 	signal counter : unsigned (63 downto 0) := (others => '0');
 
 	signal sixteen : std_logic := '0';
-	signal conversion : unsigned (15 downto 0) := (others => '0');
 	signal stereo : std_logic := '0';
 	signal freq : std_logic_vector (31 downto 0) := (others => '0');
 	signal freqCounter : unsigned (63 downto 0) := (others => '0');
@@ -339,14 +338,13 @@ begin
 					-- 16b jest uint!
 					if sixteen = '1' then
 						if readState = LEFT_EXT or readState = RIGHT_EXT then 
-							if DO(7) = '1' then
-								Data(11 downto 0) <= std_logic_vector(to_unsigned(to_integer(unsigned(DO)) + to_integer(conversion) + 4096, 12));
+							if DO(7) = '0' then
+								Data(11 downto 4) <= '1' & DO(6 downto 0);
 							else 
-								Data(11 downto 4) <= DO(7 downto 0);
+								Data(11 downto 4) <= '0' & DO(6 downto 0);
 							end if;
 						elsif readState = LEFT or readState = RIGHT then
 							Data(3 downto 0) <= DO(7 downto 4);
-							conversion <= conversion + unsigned(DO(7 downto 4));
 						end if;
 					else
 						Data(11 downto 0) <= DO(7 downto 0) & "0000";
@@ -356,8 +354,6 @@ begin
 						data_counter <= data_counter + 1;
 					end if;
 					
-				elsif state = LOADED then
-					conversion <= (others => '0');
 				elsif state = IDLE then
 					Data <= (others => '0');
 					data_counter <= (others => '0');

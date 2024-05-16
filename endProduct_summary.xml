@@ -4,9 +4,7 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<messages>
-<msg type="warning" file="HDLCompiler" num="960" delta="unknown" >"/home/xololt/repos/UCISW2-main-newer-kubica-edition/UCISW2-main-newer/register.vhd" Line 355: Expression has incompatible type
-</msg>
-
-</messages>
-
+<DesignSummary rev="5">
+<CmdHistory>
+</CmdHistory>
+</DesignSummary>
