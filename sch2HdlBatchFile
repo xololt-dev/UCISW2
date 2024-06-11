@@ -1,1 +1,3 @@
-sch2hdl,-intstyle,ise,-family,spartan3e,-flat,-suppress,-vhdl,C:/XilinxPrj/UCISW2-main-newer/endProduct.vhf,-w,C:/XilinxPrj/UCISW2-main-newer/endProduct.sch
+sch2hdl,-intstyle,ise,-family,spartan3e,-flat,-suppress,-vhdl,C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/WAV_reader.vhf,-w,C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/WAV_reader.sch
+sch2hdl,-intstyle,ise,-family,spartan3e,-flat,-suppress,-vhdl,C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf,-w,C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.sch
+sch2hdl,-intstyle,ise,-family,spartan3e,-flat,-suppress,-vhdl,C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf,-w,C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.sch

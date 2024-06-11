@@ -14,8 +14,6 @@
         <signal name="FExt(1)" />
         <signal name="FExt(0)" />
         <signal name="Abort" />
-        <signal name="Reset" />
-        <signal name="XLXN_59" />
         <signal name="OutputLCD(63:0)" />
         <signal name="XLXN_84" />
         <signal name="XLXN_85(7:0)" />
@@ -35,7 +33,7 @@
         <signal name="AD_CONV" />
         <signal name="XLXN_104" />
         <signal name="FPGA_INIT_B" />
-        <signal name="XLXN_106" />
+        <signal name="Busy" />
         <signal name="Clk_50MHz" />
         <signal name="Start" />
         <signal name="FName(7:0)" />
@@ -44,12 +42,16 @@
         <signal name="OutputLED(4)" />
         <signal name="OutputLED(4:0)" />
         <signal name="OutputLED(1:0)" />
+        <signal name="XLXN_106" />
+        <signal name="XLXN_107" />
+        <signal name="Reset" />
+        <signal name="XLXN_109" />
+        <signal name="XLXN_112" />
         <port polarity="Output" name="SDC_MOSI" />
         <port polarity="Output" name="SDC_SS" />
         <port polarity="Input" name="SDC_MISO" />
         <port polarity="Output" name="SDC_SCK" />
         <port polarity="Input" name="Abort" />
-        <port polarity="Input" name="Reset" />
         <port polarity="Output" name="OutputLCD(63:0)" />
         <port polarity="Input" name="SPI_MISO" />
         <port polarity="Output" name="SPI_MOSI" />
@@ -60,10 +62,12 @@
         <port polarity="Output" name="AMP_CS" />
         <port polarity="Output" name="AD_CONV" />
         <port polarity="Output" name="FPGA_INIT_B" />
+        <port polarity="Output" name="Busy" />
         <port polarity="Input" name="Clk_50MHz" />
         <port polarity="Input" name="Start" />
         <port polarity="Input" name="FName(7:0)" />
         <port polarity="Output" name="OutputLED(4:0)" />
+        <port polarity="Input" name="Reset" />
         <blockdef name="SDC_FileReader">
             <timestamp>2021-11-9T18:15:58</timestamp>
             <line x2="0" y1="160" y2="160" x1="64" />
@@ -158,7 +162,7 @@
             <blockpin signalname="OutputLED(1:0)" name="Error(1:0)" />
             <blockpin signalname="XLXN_85(7:0)" name="DO(7:0)" />
             <blockpin signalname="XLXN_84" name="DO_Rdy" />
-            <blockpin signalname="XLXN_106" name="Busy" />
+            <blockpin signalname="Busy" name="Busy" />
             <blockpin signalname="FExt(1:0)" name="FExt(1:0)" />
             <blockpin signalname="Clk_50MHz" name="Clk_Sys" />
         </block>
@@ -190,7 +194,7 @@
         </block>
         <block symbolname="naszregister" name="XLXI_24">
             <blockpin signalname="XLXN_84" name="DO_Rdy" />
-            <blockpin signalname="XLXN_106" name="Busy" />
+            <blockpin signalname="Busy" name="Busy" />
             <blockpin signalname="XLXN_95" name="DAC_Busy" />
             <blockpin signalname="Start" name="Start" />
             <blockpin signalname="Reset" name="Reset" />
@@ -257,20 +261,6 @@
         </branch>
         <iomarker fontsize="28" x="560" y="752" name="Abort" orien="R180" />
         <instance x="512" y="1152" name="XLXI_19" orien="R270" />
-        <branch name="Reset">
-            <wire x2="288" y1="1376" y2="1376" x1="256" />
-            <wire x2="672" y1="1376" y2="1376" x1="288" />
-            <wire x2="1088" y1="1376" y2="1376" x1="672" />
-            <wire x2="2416" y1="1376" y2="1376" x1="1088" />
-            <wire x2="1088" y1="1024" y2="1376" x1="1088" />
-            <wire x2="1504" y1="1024" y2="1024" x1="1088" />
-            <wire x2="2736" y1="400" y2="400" x1="2416" />
-            <wire x2="2416" y1="400" y2="1184" x1="2416" />
-            <wire x2="2416" y1="1184" y2="1376" x1="2416" />
-            <wire x2="3568" y1="1184" y2="1184" x1="2416" />
-            <wire x2="3680" y1="784" y2="784" x1="3568" />
-            <wire x2="3568" y1="784" y2="1184" x1="3568" />
-        </branch>
         <iomarker fontsize="28" x="256" y="1376" name="Reset" orien="R180" />
         <branch name="OutputLCD(63:0)">
             <wire x2="3440" y1="528" y2="528" x1="3120" />
@@ -366,8 +356,10 @@
             <wire x2="4160" y1="784" y2="784" x1="4128" />
         </branch>
         <iomarker fontsize="28" x="4160" y="784" name="FPGA_INIT_B" orien="R0" />
-        <branch name="XLXN_106">
+        <branch name="Busy">
             <wire x2="2288" y1="1088" y2="1088" x1="1920" />
+            <wire x2="2288" y1="1088" y2="1552" x1="2288" />
+            <wire x2="4336" y1="1552" y2="1552" x1="2288" />
             <wire x2="2288" y1="272" y2="1088" x1="2288" />
             <wire x2="2736" y1="272" y2="272" x1="2288" />
         </branch>
@@ -431,6 +423,19 @@
             <wire x2="3168" y1="1152" y2="1152" x1="1920" />
             <wire x2="3184" y1="1136" y2="1136" x1="3168" />
             <wire x2="3168" y1="1136" y2="1152" x1="3168" />
+        </branch>
+        <iomarker fontsize="28" x="4336" y="1552" name="Busy" orien="R0" />
+        <branch name="Reset">
+            <wire x2="880" y1="1376" y2="1376" x1="256" />
+            <wire x2="880" y1="1376" y2="1664" x1="880" />
+            <wire x2="2240" y1="1664" y2="1664" x1="880" />
+            <wire x2="3568" y1="1376" y2="1376" x1="880" />
+            <wire x2="1504" y1="1024" y2="1024" x1="880" />
+            <wire x2="880" y1="1024" y2="1376" x1="880" />
+            <wire x2="2736" y1="400" y2="400" x1="2240" />
+            <wire x2="2240" y1="400" y2="1664" x1="2240" />
+            <wire x2="3568" y1="784" y2="1376" x1="3568" />
+            <wire x2="3680" y1="784" y2="784" x1="3568" />
         </branch>
     </sheet>
 </drawing>

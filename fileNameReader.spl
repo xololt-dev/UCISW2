@@ -1,0 +1,12 @@
+[Inputs]
+E0
+F0
+DO_Rdy
+Read_Busy
+Reset
+Clk
+=DO[7:0]=
+[Outputs]
+Name_Rdy
+=FName[7:0]=
+[BiDir]

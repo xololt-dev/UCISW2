@@ -16,3 +16,183 @@ map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProd
 par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
 trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf 
 bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "/home/xololt/repos/temporart/UCISW2-main-newer/endProduct.xst" -ofn "/home/xololt/repos/temporart/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+xst -intstyle ise -ifn "/home/xololt/repos/temporart/UCISW2-main-newer/endProduct.xst" -ofn "/home/xololt/repos/temporart/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "/home/xololt/repos/temporart/UCISW2-main-newer/endProduct.xst" -ofn "/home/xololt/repos/temporart/UCISW2-main-newer/endProduct.syr" 
+xst -intstyle ise -ifn "/home/xololt/repos/temporart/UCISW2-main-newer/endProduct.xst" -ofn "/home/xololt/repos/temporart/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 
+xst -intstyle ise -ifn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.xst" -ofn "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ADC_DAC.ucf -uc GenIO.ucf -uc PS2_USB_SDC.ucf -uc LCD.ucf -p xc3s500e-fg320-4 endProduct.ngc endProduct.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o endProduct_map.ncd endProduct.ngd endProduct.pcf 
+par -w -intstyle ise -ol high -t 1 endProduct_map.ncd endProduct.ncd endProduct.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf LCD.ucf 
+bitgen -intstyle ise -f endProduct.ut endProduct.ncd 

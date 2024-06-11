@@ -4,7 +4,8 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
 -n 3 -fastpaths -xml endProduct.twx endProduct.ncd -o endProduct.twr
-endProduct.pcf
+endProduct.pcf -ucf ADC_DAC.ucf -ucf GenIO.ucf -ucf PS2_USB_SDC.ucf -ucf
+LCD.ucf
 
 Design file:              endProduct.ncd
 Physical constraint file: endProduct.pcf
@@ -16,7 +17,6 @@ Environment Variable      Effect
 NONE                      No environment variables were set
 --------------------------------------------------------------------------------
 
-INFO:Timing:2698 - No timing constraints found, doing default enumeration.
 INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
 INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
    option. All paths that are not constrained will be reported in the 
@@ -34,68 +34,763 @@ INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and
    SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
    Error.
 
+================================================================================
+Timing constraint: NET "Clk_50MHz_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 85078 paths analyzed, 3564 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  12.489ns.
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_1/XLXI_3/XLXI_94/nrClus_16 (SLICE_X16Y70.SR), 89 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     7.511ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_1/XLXI_3/XLXI_94/cnt512_5 (FF)
+  Destination:          XLXI_1/XLXI_3/XLXI_94/nrClus_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.468ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.021ns (0.098 - 0.119)
+  Source Clock:         Clk_50MHz_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_1/XLXI_3/XLXI_94/cnt512_5 to XLXI_1/XLXI_3/XLXI_94/nrClus_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X35Y55.YQ      Tcko                  0.587   XLXI_1/XLXI_3/XLXI_94/cnt512<4>
+                                                       XLXI_1/XLXI_3/XLXI_94/cnt512_5
+    SLICE_X33Y48.G1      net (fanout=11)       1.899   XLXI_1/XLXI_3/XLXI_94/cnt512<5>
+    SLICE_X33Y48.COUT    Topcyg                1.001   XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<3>
+                                                       XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_lut<3>
+                                                       XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<3>
+    SLICE_X33Y49.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<3>
+    SLICE_X33Y49.XB      Tcinxb                0.404   XLXI_1/XLXI_3/XLXI_94/NextState_cmp_eq0023913
+                                                       XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<4>
+    SLICE_X33Y50.F1      net (fanout=2)        0.577   XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<4>
+    SLICE_X33Y50.X       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/N11
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_0_mux000011
+    SLICE_X30Y53.F2      net (fanout=3)        0.636   XLXI_1/XLXI_3/XLXI_94/N11
+    SLICE_X30Y53.X       Tif5x                 1.152   XLXI_1/XLXI_3/XLXI_94/N128
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_0_mux00002247_G
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_0_mux00002247
+    SLICE_X25Y55.G1      net (fanout=4)        0.841   XLXI_1/XLXI_3/XLXI_94/N128
+    SLICE_X25Y55.Y       Tilo                  0.704   XLXI_1/XLXI_3/N198
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_16_mux000011
+    SLICE_X20Y48.G1      net (fanout=8)        0.853   XLXI_1/XLXI_3/XLXI_94/N40
+    SLICE_X20Y48.Y       Tilo                  0.759   XLXI_1/XLXI_3/N210
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_16_mux0000_SW0
+    SLICE_X16Y70.SR      net (fanout=1)        1.441   XLXI_1/XLXI_3/N212
+    SLICE_X16Y70.CLK     Tsrck                 0.910   XLXI_1/XLXI_3/XLXI_94/nrClus<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_16
+    -------------------------------------------------  ---------------------------
+    Total                                     12.468ns (6.221ns logic, 6.247ns route)
+                                                       (49.9% logic, 50.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     7.750ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_1/XLXI_3/XLXI_94/cnt512_2 (FF)
+  Destination:          XLXI_1/XLXI_3/XLXI_94/nrClus_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.229ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.021ns (0.098 - 0.119)
+  Source Clock:         Clk_50MHz_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_1/XLXI_3/XLXI_94/cnt512_2 to XLXI_1/XLXI_3/XLXI_94/nrClus_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X35Y54.XQ      Tcko                  0.591   XLXI_1/XLXI_3/XLXI_94/cnt512<2>
+                                                       XLXI_1/XLXI_3/XLXI_94/cnt512_2
+    SLICE_X33Y47.G1      net (fanout=19)       1.538   XLXI_1/XLXI_3/XLXI_94/cnt512<2>
+    SLICE_X33Y47.COUT    Topcyg                1.001   XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<1>
+                                                       XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_lut<1>
+                                                       XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<1>
+    SLICE_X33Y48.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<1>
+    SLICE_X33Y48.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<3>
+                                                       XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<2>
+                                                       XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<3>
+    SLICE_X33Y49.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<3>
+    SLICE_X33Y49.XB      Tcinxb                0.404   XLXI_1/XLXI_3/XLXI_94/NextState_cmp_eq0023913
+                                                       XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<4>
+    SLICE_X33Y50.F1      net (fanout=2)        0.577   XLXI_1/XLXI_3/XLXI_94/Mcompar_NextState_cmp_eq0024_cy<4>
+    SLICE_X33Y50.X       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/N11
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_0_mux000011
+    SLICE_X30Y53.F2      net (fanout=3)        0.636   XLXI_1/XLXI_3/XLXI_94/N11
+    SLICE_X30Y53.X       Tif5x                 1.152   XLXI_1/XLXI_3/XLXI_94/N128
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_0_mux00002247_G
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_0_mux00002247
+    SLICE_X25Y55.G1      net (fanout=4)        0.841   XLXI_1/XLXI_3/XLXI_94/N128
+    SLICE_X25Y55.Y       Tilo                  0.704   XLXI_1/XLXI_3/N198
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_16_mux000011
+    SLICE_X20Y48.G1      net (fanout=8)        0.853   XLXI_1/XLXI_3/XLXI_94/N40
+    SLICE_X20Y48.Y       Tilo                  0.759   XLXI_1/XLXI_3/N210
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_16_mux0000_SW0
+    SLICE_X16Y70.SR      net (fanout=1)        1.441   XLXI_1/XLXI_3/N212
+    SLICE_X16Y70.CLK     Tsrck                 0.910   XLXI_1/XLXI_3/XLXI_94/nrClus<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_16
+    -------------------------------------------------  ---------------------------
+    Total                                     12.229ns (6.343ns logic, 5.886ns route)
+                                                       (51.9% logic, 48.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     7.883ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_1/XLXI_3/XLXI_94/cnt512_5 (FF)
+  Destination:          XLXI_1/XLXI_3/XLXI_94/nrClus_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.096ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.021ns (0.098 - 0.119)
+  Source Clock:         Clk_50MHz_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_1/XLXI_3/XLXI_94/cnt512_5 to XLXI_1/XLXI_3/XLXI_94/nrClus_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X35Y55.YQ      Tcko                  0.587   XLXI_1/XLXI_3/XLXI_94/cnt512<4>
+                                                       XLXI_1/XLXI_3/XLXI_94/cnt512_5
+    SLICE_X32Y50.G3      net (fanout=11)       1.807   XLXI_1/XLXI_3/XLXI_94/cnt512<5>
+    SLICE_X32Y50.Y       Tilo                  0.759   XLXI_1/XLXI_3/N110
+                                                       XLXI_1/XLXI_3/XLXI_94/NextState_cmp_eq00239107
+    SLICE_X33Y50.G1      net (fanout=1)        0.195   XLXI_1/XLXI_3/XLXI_94/NextState_cmp_eq00239107
+    SLICE_X33Y50.Y       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/N11
+                                                       XLXI_1/XLXI_3/XLXI_94/NextState_cmp_eq00239123
+    SLICE_X33Y50.F3      net (fanout=2)        0.044   XLXI_1/XLXI_3/XLXI_94/NextState_cmp_eq0023
+    SLICE_X33Y50.X       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/N11
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_0_mux000011
+    SLICE_X30Y53.F2      net (fanout=3)        0.636   XLXI_1/XLXI_3/XLXI_94/N11
+    SLICE_X30Y53.X       Tif5x                 1.152   XLXI_1/XLXI_3/XLXI_94/N128
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_0_mux00002247_G
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_0_mux00002247
+    SLICE_X25Y55.G1      net (fanout=4)        0.841   XLXI_1/XLXI_3/XLXI_94/N128
+    SLICE_X25Y55.Y       Tilo                  0.704   XLXI_1/XLXI_3/N198
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_16_mux000011
+    SLICE_X20Y48.G1      net (fanout=8)        0.853   XLXI_1/XLXI_3/XLXI_94/N40
+    SLICE_X20Y48.Y       Tilo                  0.759   XLXI_1/XLXI_3/N210
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_16_mux0000_SW0
+    SLICE_X16Y70.SR      net (fanout=1)        1.441   XLXI_1/XLXI_3/N212
+    SLICE_X16Y70.CLK     Tsrck                 0.910   XLXI_1/XLXI_3/XLXI_94/nrClus<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/nrClus_16
+    -------------------------------------------------  ---------------------------
+    Total                                     12.096ns (6.279ns logic, 5.817ns route)
+                                                       (51.9% logic, 48.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_1/XLXI_3/XLXI_94/adrSec_23 (SLICE_X23Y62.G1), 1184 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     7.523ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_1/XLXI_3/XLXI_94/State_17 (FF)
+  Destination:          XLXI_1/XLXI_3/XLXI_94/adrSec_23 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.449ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.028ns (0.086 - 0.114)
+  Source Clock:         Clk_50MHz_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_1/XLXI_3/XLXI_94/State_17 to XLXI_1/XLXI_3/XLXI_94/adrSec_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X38Y55.YQ      Tcko                  0.652   XLXI_1/XLXI_3/XLXI_94/State<17>
+                                                       XLXI_1/XLXI_3/XLXI_94/State_17
+    SLICE_X24Y46.G3      net (fanout=79)       2.158   XLXI_1/XLXI_3/XLXI_94/State<17>
+    SLICE_X24Y46.Y       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<25>31
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_or00001
+    SLICE_X25Y46.G1      net (fanout=12)       0.245   XLXI_1/XLXI_3/XLXI_94/adrSec_or0000
+    SLICE_X25Y46.Y       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<26>16
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<25>25
+    SLICE_X22Y50.G4      net (fanout=18)       1.221   XLXI_1/XLXI_3/XLXI_94/N61
+    SLICE_X22Y50.Y       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>34
+    SLICE_X22Y50.F4      net (fanout=2)        0.045   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>34
+    SLICE_X22Y50.X       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>44
+    SLICE_X21Y50.BY      net (fanout=1)        0.721   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>
+    SLICE_X21Y50.COUT    Tbycy                 0.972   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<8>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<9>
+    SLICE_X21Y51.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<9>
+    SLICE_X21Y51.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.Y       Tciny                 0.869   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_xor<23>
+    SLICE_X23Y62.G1      net (fanout=1)        1.040   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<23>
+    SLICE_X23Y62.CLK     Tgck                  0.837   XLXI_1/XLXI_3/XLXI_94/adrSec<23>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0004<23>23
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_23
+    -------------------------------------------------  ---------------------------
+    Total                                     12.449ns (7.019ns logic, 5.430ns route)
+                                                       (56.4% logic, 43.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     7.528ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_1/XLXI_3/XLXI_94/SpC_1 (FF)
+  Destination:          XLXI_1/XLXI_3/XLXI_94/adrSec_23 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.437ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.035ns (0.086 - 0.121)
+  Source Clock:         Clk_50MHz_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_1/XLXI_3/XLXI_94/SpC_1 to XLXI_1/XLXI_3/XLXI_94/adrSec_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y52.XQ      Tcko                  0.592   XLXI_1/XLXI_3/XLXI_94/SpC<1>
+                                                       XLXI_1/XLXI_3/XLXI_94/SpC_1
+    SLICE_X25Y42.F1      net (fanout=25)       2.598   XLXI_1/XLXI_3/XLXI_94/SpC<1>
+    SLICE_X25Y42.X       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>5
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>5
+    SLICE_X24Y44.F1      net (fanout=1)        0.409   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>5
+    SLICE_X24Y44.X       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>18
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>18
+    SLICE_X22Y49.G3      net (fanout=1)        0.585   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>18
+    SLICE_X22Y49.Y       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>34
+    SLICE_X22Y49.F3      net (fanout=2)        0.044   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>34
+    SLICE_X22Y49.X       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>44
+    SLICE_X21Y50.BX      net (fanout=1)        0.679   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>
+    SLICE_X21Y50.COUT    Tbxcy                 1.095   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<8>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<8>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<9>
+    SLICE_X21Y51.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<9>
+    SLICE_X21Y51.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.Y       Tciny                 0.869   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_xor<23>
+    SLICE_X23Y62.G1      net (fanout=1)        1.040   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<23>
+    SLICE_X23Y62.CLK     Tgck                  0.837   XLXI_1/XLXI_3/XLXI_94/adrSec<23>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0004<23>23
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_23
+    -------------------------------------------------  ---------------------------
+    Total                                     12.437ns (7.082ns logic, 5.355ns route)
+                                                       (56.9% logic, 43.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     7.703ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_1/XLXI_3/XLXI_94/SpC_2 (FF)
+  Destination:          XLXI_1/XLXI_3/XLXI_94/adrSec_23 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.260ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.037ns (0.086 - 0.123)
+  Source Clock:         Clk_50MHz_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_1/XLXI_3/XLXI_94/SpC_2 to XLXI_1/XLXI_3/XLXI_94/adrSec_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y50.YQ      Tcko                  0.652   XLXI_1/XLXI_3/XLXI_94/SpC<3>
+                                                       XLXI_1/XLXI_3/XLXI_94/SpC_2
+    SLICE_X27Y45.F1      net (fanout=25)       1.985   XLXI_1/XLXI_3/XLXI_94/SpC<2>
+    SLICE_X27Y45.X       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>5
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>5
+    SLICE_X27Y44.F1      net (fanout=1)        0.156   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>5
+    SLICE_X27Y44.X       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>18
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>18
+    SLICE_X20Y49.G2      net (fanout=1)        1.245   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>18
+    SLICE_X20Y49.Y       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>34
+    SLICE_X20Y49.F1      net (fanout=2)        0.459   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>34
+    SLICE_X20Y49.X       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>44
+    SLICE_X21Y51.BX      net (fanout=1)        0.406   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>
+    SLICE_X21Y51.COUT    Tbxcy                 1.095   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.Y       Tciny                 0.869   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_xor<23>
+    SLICE_X23Y62.G1      net (fanout=1)        1.040   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<23>
+    SLICE_X23Y62.CLK     Tgck                  0.837   XLXI_1/XLXI_3/XLXI_94/adrSec<23>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0004<23>23
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_23
+    -------------------------------------------------  ---------------------------
+    Total                                     12.260ns (6.969ns logic, 5.291ns route)
+                                                       (56.8% logic, 43.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_1/XLXI_3/XLXI_94/adrSec_31 (SLICE_X23Y58.G2), 1556 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     7.697ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_1/XLXI_3/XLXI_94/State_17 (FF)
+  Destination:          XLXI_1/XLXI_3/XLXI_94/adrSec_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.280ns (Levels of Logic = 17)
+  Clock Path Skew:      -0.023ns (0.091 - 0.114)
+  Source Clock:         Clk_50MHz_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_1/XLXI_3/XLXI_94/State_17 to XLXI_1/XLXI_3/XLXI_94/adrSec_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X38Y55.YQ      Tcko                  0.652   XLXI_1/XLXI_3/XLXI_94/State<17>
+                                                       XLXI_1/XLXI_3/XLXI_94/State_17
+    SLICE_X24Y46.G3      net (fanout=79)       2.158   XLXI_1/XLXI_3/XLXI_94/State<17>
+    SLICE_X24Y46.Y       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<25>31
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_or00001
+    SLICE_X25Y46.G1      net (fanout=12)       0.245   XLXI_1/XLXI_3/XLXI_94/adrSec_or0000
+    SLICE_X25Y46.Y       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<26>16
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<25>25
+    SLICE_X22Y50.G4      net (fanout=18)       1.221   XLXI_1/XLXI_3/XLXI_94/N61
+    SLICE_X22Y50.Y       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>34
+    SLICE_X22Y50.F4      net (fanout=2)        0.045   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>34
+    SLICE_X22Y50.X       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>44
+    SLICE_X21Y50.BY      net (fanout=1)        0.721   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<22>
+    SLICE_X21Y50.COUT    Tbycy                 0.972   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<8>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<9>
+    SLICE_X21Y51.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<9>
+    SLICE_X21Y51.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<23>
+    SLICE_X21Y58.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<23>
+    SLICE_X21Y58.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<24>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<24>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<25>
+    SLICE_X21Y59.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<25>
+    SLICE_X21Y59.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<26>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<26>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<27>
+    SLICE_X21Y60.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<27>
+    SLICE_X21Y60.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<28>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<28>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<29>
+    SLICE_X21Y61.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<29>
+    SLICE_X21Y61.Y       Tciny                 0.869   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<30>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<30>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_xor<31>
+    SLICE_X23Y58.G2      net (fanout=1)        0.399   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<31>
+    SLICE_X23Y58.CLK     Tgck                  0.837   XLXI_1/XLXI_3/XLXI_94/adrSec<31>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0004<31>23
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_31
+    -------------------------------------------------  ---------------------------
+    Total                                     12.280ns (7.491ns logic, 4.789ns route)
+                                                       (61.0% logic, 39.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     7.702ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_1/XLXI_3/XLXI_94/SpC_1 (FF)
+  Destination:          XLXI_1/XLXI_3/XLXI_94/adrSec_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.268ns (Levels of Logic = 17)
+  Clock Path Skew:      -0.030ns (0.091 - 0.121)
+  Source Clock:         Clk_50MHz_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_1/XLXI_3/XLXI_94/SpC_1 to XLXI_1/XLXI_3/XLXI_94/adrSec_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y52.XQ      Tcko                  0.592   XLXI_1/XLXI_3/XLXI_94/SpC<1>
+                                                       XLXI_1/XLXI_3/XLXI_94/SpC_1
+    SLICE_X25Y42.F1      net (fanout=25)       2.598   XLXI_1/XLXI_3/XLXI_94/SpC<1>
+    SLICE_X25Y42.X       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>5
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>5
+    SLICE_X24Y44.F1      net (fanout=1)        0.409   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>5
+    SLICE_X24Y44.X       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>18
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>18
+    SLICE_X22Y49.G3      net (fanout=1)        0.585   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>18
+    SLICE_X22Y49.Y       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>34
+    SLICE_X22Y49.F3      net (fanout=2)        0.044   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>34
+    SLICE_X22Y49.X       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>44
+    SLICE_X21Y50.BX      net (fanout=1)        0.679   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<23>
+    SLICE_X21Y50.COUT    Tbxcy                 1.095   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<8>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<8>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<9>
+    SLICE_X21Y51.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<9>
+    SLICE_X21Y51.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<23>
+    SLICE_X21Y58.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<23>
+    SLICE_X21Y58.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<24>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<24>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<25>
+    SLICE_X21Y59.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<25>
+    SLICE_X21Y59.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<26>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<26>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<27>
+    SLICE_X21Y60.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<27>
+    SLICE_X21Y60.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<28>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<28>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<29>
+    SLICE_X21Y61.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<29>
+    SLICE_X21Y61.Y       Tciny                 0.869   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<30>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<30>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_xor<31>
+    SLICE_X23Y58.G2      net (fanout=1)        0.399   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<31>
+    SLICE_X23Y58.CLK     Tgck                  0.837   XLXI_1/XLXI_3/XLXI_94/adrSec<31>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0004<31>23
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_31
+    -------------------------------------------------  ---------------------------
+    Total                                     12.268ns (7.554ns logic, 4.714ns route)
+                                                       (61.6% logic, 38.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     7.877ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               XLXI_1/XLXI_3/XLXI_94/SpC_2 (FF)
+  Destination:          XLXI_1/XLXI_3/XLXI_94/adrSec_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      12.091ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.032ns (0.091 - 0.123)
+  Source Clock:         Clk_50MHz_BUFGP rising at 0.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: XLXI_1/XLXI_3/XLXI_94/SpC_2 to XLXI_1/XLXI_3/XLXI_94/adrSec_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X34Y50.YQ      Tcko                  0.652   XLXI_1/XLXI_3/XLXI_94/SpC<3>
+                                                       XLXI_1/XLXI_3/XLXI_94/SpC_2
+    SLICE_X27Y45.F1      net (fanout=25)       1.985   XLXI_1/XLXI_3/XLXI_94/SpC<2>
+    SLICE_X27Y45.X       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>5
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>5
+    SLICE_X27Y44.F1      net (fanout=1)        0.156   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>5
+    SLICE_X27Y44.X       Tilo                  0.704   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>18
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>18
+    SLICE_X20Y49.G2      net (fanout=1)        1.245   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>18
+    SLICE_X20Y49.Y       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>34
+    SLICE_X20Y49.F1      net (fanout=2)        0.459   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>34
+    SLICE_X20Y49.X       Tilo                  0.759   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>44
+    SLICE_X21Y51.BX      net (fanout=1)        0.406   XLXI_1/XLXI_3/XLXI_94/adrSec_mux0005<21>
+    SLICE_X21Y51.COUT    Tbxcy                 1.095   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<10>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<11>
+    SLICE_X21Y52.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<12>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<13>
+    SLICE_X21Y53.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<14>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<15>
+    SLICE_X21Y54.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<16>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<17>
+    SLICE_X21Y55.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<18>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<19>
+    SLICE_X21Y56.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<20>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<21>
+    SLICE_X21Y57.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<22>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<23>
+    SLICE_X21Y58.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<23>
+    SLICE_X21Y58.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<24>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<24>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<25>
+    SLICE_X21Y59.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<25>
+    SLICE_X21Y59.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<26>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<26>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<27>
+    SLICE_X21Y60.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<27>
+    SLICE_X21Y60.COUT    Tbyp                  0.118   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<28>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<28>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<29>
+    SLICE_X21Y61.CIN     net (fanout=1)        0.000   XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<29>
+    SLICE_X21Y61.Y       Tciny                 0.869   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<30>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_cy<30>
+                                                       XLXI_1/XLXI_3/XLXI_94/Madd_adrSec_share0000_xor<31>
+    SLICE_X23Y58.G2      net (fanout=1)        0.399   XLXI_1/XLXI_3/XLXI_94/adrSec_share0000<31>
+    SLICE_X23Y58.CLK     Tgck                  0.837   XLXI_1/XLXI_3/XLXI_94/adrSec<31>
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_mux0004<31>23
+                                                       XLXI_1/XLXI_3/XLXI_94/adrSec_31
+    -------------------------------------------------  ---------------------------
+    Total                                     12.091ns (7.441ns logic, 4.650ns route)
+                                                       (61.5% logic, 38.5% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "Clk_50MHz_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_1/XLXI_24/readState_5 (SLICE_X39Y17.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.931ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               XLXI_1/XLXI_24/nextReadState_5 (FF)
+  Destination:          XLXI_1/XLXI_24/readState_5 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.931ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         Clk_50MHz_BUFGP rising at 20.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: XLXI_1/XLXI_24/nextReadState_5 to XLXI_1/XLXI_24/readState_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X38Y17.XQ      Tcko                  0.474   XLXI_1/XLXI_24/nextReadState<5>
+                                                       XLXI_1/XLXI_24/nextReadState_5
+    SLICE_X39Y17.BX      net (fanout=1)        0.364   XLXI_1/XLXI_24/nextReadState<5>
+    SLICE_X39Y17.CLK     Tckdi       (-Th)    -0.093   XLXI_1/XLXI_24/readState<5>
+                                                       XLXI_1/XLXI_24/readState_5
+    -------------------------------------------------  ---------------------------
+    Total                                      0.931ns (0.567ns logic, 0.364ns route)
+                                                       (60.9% logic, 39.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_1/XLXI_24/readState_3 (SLICE_X42Y14.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.962ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               XLXI_1/XLXI_24/nextReadState_3 (FF)
+  Destination:          XLXI_1/XLXI_24/readState_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.960ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.002ns (0.002 - 0.004)
+  Source Clock:         Clk_50MHz_BUFGP rising at 20.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: XLXI_1/XLXI_24/nextReadState_3 to XLXI_1/XLXI_24/readState_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X43Y17.XQ      Tcko                  0.473   XLXI_1/XLXI_24/nextReadState<3>
+                                                       XLXI_1/XLXI_24/nextReadState_3
+    SLICE_X42Y14.BX      net (fanout=1)        0.353   XLXI_1/XLXI_24/nextReadState<3>
+    SLICE_X42Y14.CLK     Tckdi       (-Th)    -0.134   XLXI_1/XLXI_24/readState<3>
+                                                       XLXI_1/XLXI_24/readState_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.960ns (0.607ns logic, 0.353ns route)
+                                                       (63.2% logic, 36.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point XLXI_1/XLXI_21/DATASys_1 (SLICE_X43Y11.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.965ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               XLXI_1/XLXI_24/Data_1 (FF)
+  Destination:          XLXI_1/XLXI_21/DATASys_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.972ns (Levels of Logic = 0)
+  Clock Path Skew:      0.007ns (0.030 - 0.023)
+  Source Clock:         Clk_50MHz_BUFGP rising at 20.000ns
+  Destination Clock:    Clk_50MHz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: XLXI_1/XLXI_24/Data_1 to XLXI_1/XLXI_21/DATASys_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y10.XQ      Tcko                  0.473   XLXI_1/XLXI_24/Data<1>
+                                                       XLXI_1/XLXI_24/Data_1
+    SLICE_X43Y11.BX      net (fanout=2)        0.406   XLXI_1/XLXI_24/Data<1>
+    SLICE_X43Y11.CLK     Tckdi       (-Th)    -0.093   XLXI_1/XLXI_21/DATASys<1>
+                                                       XLXI_1/XLXI_21/DATASys_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.972ns (0.566ns logic, 0.406ns route)
+                                                       (58.2% logic, 41.8% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "Clk_50MHz_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 16.824ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 1.588ns (Tbpwl)
+  Physical resource: XLXI_1/XLXI_3/XLXI_89/Mram_BRAM/CLKA
+  Logical resource: XLXI_1/XLXI_3/XLXI_89/Mram_BRAM.A/CLKA
+  Location pin: RAMB16_X1Y1.CLKA
+  Clock network: Clk_50MHz_BUFGP
+--------------------------------------------------------------------------------
+Slack: 16.824ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 1.588ns (Tbpwh)
+  Physical resource: XLXI_1/XLXI_3/XLXI_89/Mram_BRAM/CLKA
+  Logical resource: XLXI_1/XLXI_3/XLXI_89/Mram_BRAM.A/CLKA
+  Location pin: RAMB16_X1Y1.CLKA
+  Clock network: Clk_50MHz_BUFGP
+--------------------------------------------------------------------------------
+Slack: 16.824ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.176ns (314.861MHz) (Tbp)
+  Physical resource: XLXI_1/XLXI_3/XLXI_89/Mram_BRAM/CLKA
+  Logical resource: XLXI_1/XLXI_3/XLXI_89/Mram_BRAM.A/CLKA
+  Location pin: RAMB16_X1Y1.CLKA
+  Clock network: Clk_50MHz_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
 
 
 Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Setup/Hold to clock Clk_50MHz
-------------+------------+------------+------------------+--------+
-            |Max Setup to|Max Hold to |                  | Clock  |
-Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
-------------+------------+------------+------------------+--------+
-BTN_EAST    |    1.123(R)|    0.319(R)|Clk_50MHz_BUFGP   |   0.000|
-BTN_SOUTH   |    6.936(R)|   -0.100(R)|Clk_50MHz_BUFGP   |   0.000|
-BTN_WEST    |    4.734(R)|    0.617(R)|Clk_50MHz_BUFGP   |   0.000|
-LCD_D<3>    |   -0.040(R)|    1.255(R)|Clk_50MHz_BUFGP   |   0.000|
-SDC_MISO    |    0.840(R)|    0.543(R)|Clk_50MHz_BUFGP   |   0.000|
-SPI_MISO    |    0.975(R)|    0.431(R)|Clk_50MHz_BUFGP   |   0.000|
-------------+------------+------------+------------------+--------+
-
-Clock Clk_50MHz to Pad
-------------+------------+------------------+--------+
-            | clk (edge) |                  | Clock  |
-Destination |   to PAD   |Internal Clock(s) | Phase  |
-------------+------------+------------------+--------+
-DAC_CS      |    8.446(R)|Clk_50MHz_BUFGP   |   0.000|
-LCD_D<0>    |   11.165(R)|Clk_50MHz_BUFGP   |   0.000|
-LCD_D<1>    |   11.205(R)|Clk_50MHz_BUFGP   |   0.000|
-LCD_D<2>    |   10.085(R)|Clk_50MHz_BUFGP   |   0.000|
-LCD_D<3>    |   10.453(R)|Clk_50MHz_BUFGP   |   0.000|
-LCD_E       |    7.703(R)|Clk_50MHz_BUFGP   |   0.000|
-LCD_RS      |    9.356(R)|Clk_50MHz_BUFGP   |   0.000|
-LCD_RW      |    9.492(R)|Clk_50MHz_BUFGP   |   0.000|
-SDC_MOSI    |   11.429(R)|Clk_50MHz_BUFGP   |   0.000|
-SDC_SCK     |    9.427(R)|Clk_50MHz_BUFGP   |   0.000|
-SDC_SS      |    8.519(R)|Clk_50MHz_BUFGP   |   0.000|
-SPI_MOSI    |    8.547(R)|Clk_50MHz_BUFGP   |   0.000|
-------------+------------+------------------+--------+
-
 Clock to Setup on destination clock Clk_50MHz
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-Clk_50MHz      |   11.235|         |         |         |
+Clk_50MHz      |   12.489|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Pad to Pad
----------------+---------------+---------+
-Source Pad     |Destination Pad|  Delay  |
----------------+---------------+---------+
-Clk_50MHz      |SPI_SCK        |    7.651|
----------------+---------------+---------+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 85078 paths, 0 nets, and 9403 connections
+
+Design statistics:
+   Minimum period:  12.489ns{1}   (Maximum frequency:  80.070MHz)
 
 
-Analysis completed Thu May 16 14:12:09 2024 
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Jun 11 12:37:59 2024 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4543 MB
+Peak Memory Usage: 4544 MB
 
 
 

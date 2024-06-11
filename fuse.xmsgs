@@ -5,7 +5,28 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="960" delta="unknown" >"/home/xololt/repos/UCISW2-main-newer-kubica-edition/UCISW2-main-newer/register.vhd" Line 355: Expression has incompatible type
+<msg type="warning" file="HDLCompiler" num="89" delta="unknown" >"C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 216: &lt;<arg fmt="%s" index="1">sdc_filereader</arg>&gt; remains a black-box since it has no binding entity.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="89" delta="unknown" >"C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 240: &lt;<arg fmt="%s" index="1">dacwrite</arg>&gt; remains a black-box since it has no binding entity.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="89" delta="unknown" >"C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 426: &lt;<arg fmt="%s" index="1">lcd1x64</arg>&gt; remains a black-box since it has no binding entity.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="89" delta="unknown" >"C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 437: &lt;<arg fmt="%s" index="1">ps2_kbd</arg>&gt; remains a black-box since it has no binding entity.
+</msg>
+
+<msg type="warning" file="Simulator" num="648" delta="unknown" >&quot;<arg fmt="%s" index="1">C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf</arg>&quot; Line <arg fmt="%d" index="2">216</arg>. Instance <arg fmt="%s" index="3">sdc_filereader</arg> is unbound
+</msg>
+
+<msg type="warning" file="Simulator" num="648" delta="unknown" >&quot;<arg fmt="%s" index="1">C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf</arg>&quot; Line <arg fmt="%d" index="2">240</arg>. Instance <arg fmt="%s" index="3">dacwrite</arg> is unbound
+</msg>
+
+<msg type="warning" file="Simulator" num="648" delta="unknown" >&quot;<arg fmt="%s" index="1">C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf</arg>&quot; Line <arg fmt="%d" index="2">426</arg>. Instance <arg fmt="%s" index="3">lcd1x64</arg> is unbound
+</msg>
+
+<msg type="warning" file="Simulator" num="648" delta="unknown" >&quot;<arg fmt="%s" index="1">C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf</arg>&quot; Line <arg fmt="%d" index="2">437</arg>. Instance <arg fmt="%s" index="3">ps2_kbd</arg> is unbound
 </msg>
 
 </messages>

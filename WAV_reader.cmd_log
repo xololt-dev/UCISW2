@@ -1,2 +1,4 @@
 sch2sym -intstyle ise -family spartan3e -refsym WAV_reader C:/XilinxPrj/UCISW2-main-newer/WAV_reader.sch C:/XilinxPrj/UCISW2-main-newer/WAV_reader.sym 
 sch2sym -intstyle ise -family spartan3e -refsym WAV_reader C:/XilinxPrj/UCISW2-main-newer/WAV_reader.sch C:/XilinxPrj/UCISW2-main-newer/WAV_reader.sym 
+sch2sym -intstyle ise -family spartan3e -w -refsym WAV_reader C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/WAV_reader.sch C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/WAV_reader.sym 
+sch2sym -intstyle ise -family spartan3e -w -refsym WAV_reader C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/WAV_reader.sch C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/WAV_reader.sym 

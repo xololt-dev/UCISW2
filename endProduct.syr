@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: endProduct.prj
@@ -104,15 +104,16 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/XilinxPrj/UCISW2-main-newer/register.vhd" in Library work.
+Compiling vhdl file "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/register.vhd" in Library work.
 Architecture behavioral of Entity naszregister is up to date.
-Compiling vhdl file "C:/XilinxPrj/UCISW2-main-newer/fileNameReader.vhd" in Library work.
+Compiling vhdl file "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/fileNameReader.vhd" in Library work.
 Entity <filenamereader> compiled.
 Entity <filenamereader> (Architecture <behavioral>) compiled.
-Compiling vhdl file "C:/XilinxPrj/UCISW2-main-newer/endProduct.vhf" in Library work.
+Compiling vhdl file "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" in Library work.
+Architecture behavioral of Entity ifd_mxilinx_endproduct is up to date.
 Architecture behavioral of Entity wav_reader_muser_endproduct is up to date.
 Architecture behavioral of Entity endproduct is up to date.
-Compiling vhdl file "C:/XilinxPrj/UCISW2-main-newer/WAV_reader.vhf" in Library work.
+Compiling vhdl file "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/WAV_reader.vhf" in Library work.
 Architecture behavioral of Entity wav_reader is up to date.
 
 =========================================================================
@@ -124,6 +125,9 @@ Analyzing hierarchy for entity <WAV_reader_MUSER_endProduct> in library <work> (
 
 Analyzing hierarchy for entity <fileNameReader> in library <work> (architecture <behavioral>).
 
+Analyzing hierarchy for entity <IFD_MXILINX_endProduct> in library <work> (architecture <behavioral>) with generics.
+	INIT = '0'
+
 Analyzing hierarchy for entity <naszregister> in library <work> (architecture <behavioral>).
 
 
@@ -131,25 +135,32 @@ Analyzing hierarchy for entity <naszregister> in library <work> (architecture <b
 *                            HDL Analysis                               *
 =========================================================================
 Analyzing Entity <endProduct> in library <work> (Architecture <behavioral>).
-WARNING:Xst:753 - "C:/XilinxPrj/UCISW2-main-newer/endProduct.vhf" line 292: Unconnected output port 'OutputLED' of component 'WAV_reader_MUSER_endProduct'.
-WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main-newer/endProduct.vhf" line 314: Instantiating black box module <LCD1x64>.
-WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main-newer/endProduct.vhf" line 325: Instantiating black box module <PS2_Kbd>.
+WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" line 409: Instantiating black box module <LCD1x64>.
+WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" line 420: Instantiating black box module <PS2_Kbd>.
+    Set user-defined property "HU_SET =  XLXI_34_1" for instance <XLXI_34> in unit <endProduct>.
 Entity <endProduct> analyzed. Unit <endProduct> generated.
 
 Analyzing Entity <WAV_reader_MUSER_endProduct> in library <work> (Architecture <behavioral>).
-WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main-newer/endProduct.vhf" line 129: Instantiating black box module <SDC_FileReader>.
-WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main-newer/endProduct.vhf" line 153: Instantiating black box module <DACWrite>.
+WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" line 206: Instantiating black box module <SDC_FileReader>.
+WARNING:Xst:2211 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" line 230: Instantiating black box module <DACWrite>.
 Entity <WAV_reader_MUSER_endProduct> analyzed. Unit <WAV_reader_MUSER_endProduct> generated.
 
 Analyzing Entity <naszregister> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "C:/XilinxPrj/UCISW2-main-newer/register.vhd" line 106: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+WARNING:Xst:819 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/register.vhd" line 106: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
    <readState>, <freq>, <data_size_vec>
 Entity <naszregister> analyzed. Unit <naszregister> generated.
 
 Analyzing Entity <fileNameReader> in library <work> (Architecture <behavioral>).
-WARNING:Xst:819 - "C:/XilinxPrj/UCISW2-main-newer/fileNameReader.vhd" line 44: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <charBuffer>
 Entity <fileNameReader> analyzed. Unit <fileNameReader> generated.
+
+Analyzing generic Entity <IFD_MXILINX_endProduct> in library <work> (Architecture <behavioral>).
+	INIT = '0'
+    Set user-defined property "INIT =  0" for instance <I_36_15> in unit <IFD_MXILINX_endProduct>.
+    Set user-defined property "IOB =  TRUE" for instance <I_36_15> in unit <IFD_MXILINX_endProduct>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_24> in unit <IFD_MXILINX_endProduct>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_24> in unit <IFD_MXILINX_endProduct>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_24> in unit <IFD_MXILINX_endProduct>.
+Entity <IFD_MXILINX_endProduct> analyzed. Unit <IFD_MXILINX_endProduct> generated.
 
 
 =========================================================================
@@ -159,21 +170,18 @@ Entity <fileNameReader> analyzed. Unit <fileNameReader> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <fileNameReader>.
-    Related source file is "C:/XilinxPrj/UCISW2-main-newer/fileNameReader.vhd".
+    Related source file is "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/fileNameReader.vhd".
 WARNING:Xst:647 - Input <E0> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <F0> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <DO_Rdy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:653 - Signal <charBuffer> is used but never assigned. This sourceless signal will be automatically connected to value 00110000.
-WARNING:Xst:737 - Found 8-bit latch for signal <FName>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 8-bit comparator greatequal for signal <FName$cmp_ge0000> created at line 47.
-    Found 8-bit comparator less for signal <FName$cmp_lt0000> created at line 47.
+    Found 1-bit register for signal <Name_Rdy>.
+    Found 8-bit register for signal <charBuffer>.
     Summary:
-	inferred   2 Comparator(s).
+	inferred   9 D-type flip-flop(s).
 Unit <fileNameReader> synthesized.
 
 
 Synthesizing Unit <naszregister>.
-    Related source file is "C:/XilinxPrj/UCISW2-main-newer/register.vhd".
+    Related source file is "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/register.vhd".
     Register <Line<16>> equivalent to <freq<0>> has been removed
     Register <Line<26>> equivalent to <freq<10>> has been removed
     Register <Line<27>> equivalent to <freq<11>> has been removed
@@ -271,13 +279,18 @@ Unit <naszregister> synthesized.
 
 
 Synthesizing Unit <WAV_reader_MUSER_endProduct>.
-    Related source file is "C:/XilinxPrj/UCISW2-main-newer/endProduct.vhf".
+    Related source file is "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf".
 WARNING:Xst:646 - Signal <XLXN_104> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <WAV_reader_MUSER_endProduct> synthesized.
 
 
+Synthesizing Unit <IFD_MXILINX_endProduct>.
+    Related source file is "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf".
+Unit <IFD_MXILINX_endProduct> synthesized.
+
+
 Synthesizing Unit <endProduct>.
-    Related source file is "C:/XilinxPrj/UCISW2-main-newer/endProduct.vhf".
+    Related source file is "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf".
 Unit <endProduct> synthesized.
 
 
@@ -289,20 +302,17 @@ Macro Statistics
  32-bit adder                                          : 1
 # Counters                                             : 2
  64-bit up counter                                     : 2
-# Registers                                            : 116
- 1-bit register                                        : 111
+# Registers                                            : 118
+ 1-bit register                                        : 112
  32-bit register                                       : 1
  4-bit register                                        : 2
  6-bit register                                        : 2
-# Latches                                              : 1
- 8-bit latch                                           : 1
-# Comparators                                          : 25
+ 8-bit register                                        : 1
+# Comparators                                          : 23
  32-bit comparator greatequal                          : 1
  64-bit comparator equal                               : 5
  64-bit comparator greatequal                          : 6
  64-bit comparator not equal                           : 11
- 8-bit comparator greatequal                           : 1
- 8-bit comparator less                                 : 1
 
 =========================================================================
 
@@ -336,17 +346,11 @@ Loading core <SDC_FileReader> for timing and area information for instance <XLXI
 Loading core <DACWrite> for timing and area information for instance <XLXI_21>.
 INFO:Xst:2261 - The FF/Latch <Cmd_2> in Unit <XLXI_24> is equivalent to the following 3 FFs/Latches, which will be removed : <Cmd_3> <Addr_2> <Addr_3> 
 INFO:Xst:2261 - The FF/Latch <Cmd_1> in Unit <XLXI_24> is equivalent to the following FF/Latch, which will be removed : <Addr_1> 
+INFO:Xst:2261 - The FF/Latch <charBuffer_6> in Unit <XLXI_24> is equivalent to the following FF/Latch, which will be removed : <charBuffer_7> 
 WARNING:Xst:1426 - The value init of the FF/Latch Cmd_1 hinder the constant cleaning in the block XLXI_24.
    You should achieve better results by setting this init to 1.
 WARNING:Xst:1293 - FF/Latch <Cmd_2> has a constant value of 0 in block <XLXI_24>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <0>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <2>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 1 in block <4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 1 in block <5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <6>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <7>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <charBuffer_6> has a constant value of 0 in block <XLXI_24>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -357,23 +361,21 @@ Macro Statistics
  32-bit adder                                          : 1
 # Counters                                             : 2
  64-bit up counter                                     : 2
-# Registers                                            : 163
- Flip-Flops                                            : 163
-# Latches                                              : 1
- 8-bit latch                                           : 1
-# Comparators                                          : 25
+# Registers                                            : 173
+ Flip-Flops                                            : 173
+# Comparators                                          : 23
  32-bit comparator greatequal                          : 1
  64-bit comparator equal                               : 5
  64-bit comparator greatequal                          : 6
  64-bit comparator not equal                           : 11
- 8-bit comparator greatequal                           : 1
- 8-bit comparator less                                 : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1293 - FF/Latch <charBuffer_6> has a constant value of 0 in block <fileNameReader>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <charBuffer_7> has a constant value of 0 in block <fileNameReader>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1426 - The value init of the FF/Latch Cmd_1 hinder the constant cleaning in the block naszregister.
    You should achieve better results by setting this init to 1.
 WARNING:Xst:1426 - The value init of the FF/Latch Addr_1 hinder the constant cleaning in the block naszregister.
@@ -383,14 +385,16 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Cmd_3> has a consta
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Addr_2> has a constant value of 0 in block <naszregister>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Addr_3> has a constant value of 0 in block <naszregister>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <Cmd_1> in Unit <naszregister> is equivalent to the following FF/Latch, which will be removed : <Addr_1> 
-INFO:Xst:2261 - The FF/Latch <7> in Unit <LPM_LATCH_1> is equivalent to the following 5 FFs/Latches, which will be removed : <6> <3> <2> <1> <0> 
-INFO:Xst:2261 - The FF/Latch <5> in Unit <LPM_LATCH_1> is equivalent to the following FF/Latch, which will be removed : <4> 
-WARNING:Xst:1710 - FF/Latch <7> (without init value) has a constant value of 0 in block <LPM_LATCH_1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <5> (without init value) has a constant value of 1 in block <LPM_LATCH_1>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <charBuffer_4> in Unit <fileNameReader> is equivalent to the following FF/Latch, which will be removed : <charBuffer_5> 
 
 Optimizing unit <endProduct> ...
 
+Optimizing unit <fileNameReader> ...
+WARNING:Xst:1293 - FF/Latch <charBuffer_4> has a constant value of 1 in block <fileNameReader>. This FF/Latch will be trimmed during the optimization process.
+
 Optimizing unit <naszregister> ...
+
+Optimizing unit <IFD_MXILINX_endProduct> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -414,8 +418,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 296
- Flip-Flops                                            : 296
+# Registers                                            : 302
+ Flip-Flops                                            : 302
 
 =========================================================================
 
@@ -441,36 +445,37 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 27
+# IOs                              : 31
 
 Cell Usage :
-# BELS                             : 3757
-#      GND                         : 5
-#      INV                         : 82
+# BELS                             : 3778
+#      GND                         : 6
+#      INV                         : 81
 #      LUT1                        : 283
-#      LUT2                        : 299
-#      LUT2_D                      : 10
+#      LUT2                        : 305
+#      LUT2_D                      : 9
 #      LUT2_L                      : 28
-#      LUT3                        : 379
-#      LUT3_D                      : 12
-#      LUT3_L                      : 11
-#      LUT4                        : 1070
-#      LUT4_D                      : 74
-#      LUT4_L                      : 102
+#      LUT3                        : 380
+#      LUT3_D                      : 13
+#      LUT3_L                      : 12
+#      LUT4                        : 1085
+#      LUT4_D                      : 70
+#      LUT4_L                      : 104
 #      MULT_AND                    : 10
 #      MUXCY                       : 846
-#      MUXF5                       : 82
+#      MUXF5                       : 81
 #      MUXF6                       : 19
 #      MUXF7                       : 5
 #      OR2                         : 2
-#      VCC                         : 5
+#      VCC                         : 6
 #      XORCY                       : 433
-# FlipFlops/Latches                : 939
+# FlipFlops/Latches                : 945
 #      FD                          : 85
+#      FDCE                        : 1
 #      FDE                         : 354
 #      FDR                         : 78
-#      FDRE                        : 254
-#      FDRS                        : 15
+#      FDRE                        : 258
+#      FDRS                        : 16
 #      FDRSE                       : 8
 #      FDS                         : 141
 #      FDSE                        : 4
@@ -478,10 +483,10 @@ Cell Usage :
 #      RAMB16_S9_S9                : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 26
-#      IBUF                        : 7
+# IO Buffers                       : 30
+#      IBUF                        : 6
 #      IOBUF                       : 4
-#      OBUF                        : 15
+#      OBUF                        : 20
 =========================================================================
 
 Device utilization summary:
@@ -489,11 +494,12 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                     1362  out of   4656    29%  
- Number of Slice Flip Flops:            939  out of   9312    10%  
- Number of 4 input LUTs:               2350  out of   9312    25%  
- Number of IOs:                          27
- Number of bonded IOBs:                  27  out of    232    11%  
+ Number of Slices:                     1382  out of   4656    29%  
+ Number of Slice Flip Flops:            944  out of   9312    10%  
+ Number of 4 input LUTs:               2370  out of   9312    25%  
+ Number of IOs:                          31
+ Number of bonded IOBs:                  31  out of    232    13%  
+    IOB Flip Flops:                       1
  Number of BRAMs:                         1  out of     20     5%  
  Number of GCLKs:                         1  out of     24     4%  
 
@@ -518,19 +524,23 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-Clk_50MHz                          | BUFGP                  | 940   |
+Clk_50MHz                          | BUFGP                  | 946   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-No asynchronous control signals found in this design
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+XLXI_34/XLXN_1(XLXI_34/I_36_29:G)  | NONE(XLXI_34/I_36_15)  | 1     |
+-----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
    Minimum period: 12.734ns (Maximum Frequency: 78.531MHz)
-   Minimum input arrival time before clock: 7.367ns
+   Minimum input arrival time before clock: 3.980ns
    Maximum output required time after clock: 7.533ns
    Maximum combinational path delay: 7.263ns
 
@@ -541,7 +551,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'Clk_50MHz'
   Clock period: 12.734ns (frequency: 78.531MHz)
-  Total number of paths / destination ports: 84787 / 1934
+  Total number of paths / destination ports: 85202 / 2108
 -------------------------------------------------------------------------
 Delay:               12.734ns (Levels of Logic = 20)
   Source:            XLXI_1/XLXI_3/XLXI_89/cntBytes_5 (FF)
@@ -559,7 +569,7 @@ Delay:               12.734ns (Levels of Logic = 20)
      LUT4_D:I3->O          5   0.704   0.712  XLXI_89/NextState_0_cmp_eq000011 (XLXI_89/N3)
      LUT3:I1->O           72   0.704   1.279  XLXI_89/iDO_Rdy1 (DO_Rdy)
      end scope: 'XLXI_1/XLXI_3'
-     LUT4:I3->O            4   0.704   0.762  XLXI_1/XLXI_24/Pop_and000129 (XLXI_1/XLXN_87)
+     LUT4:I3->O            4   0.704   0.762  XLXI_1/XLXI_24/Pop_and0001 (XLXI_1/XLXN_87)
      begin scope: 'XLXI_1/XLXI_3'
      LUT4:I0->O           14   0.704   1.035  XLXI_89/DoPOP_and00001 (XLXI_89/DoPOP)
      LUT3:I2->O            1   0.704   0.000  XLXI_89/Mcount_cntBytes_lut<0> (XLXI_89/Mcount_cntBytes_lut<0>)
@@ -582,32 +592,29 @@ Delay:               12.734ns (Levels of Logic = 20)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk_50MHz'
-  Total number of paths / destination ports: 386 / 378
+  Total number of paths / destination ports: 7 / 7
 -------------------------------------------------------------------------
-Offset:              7.367ns (Levels of Logic = 7)
-  Source:            BTN_SOUTH (PAD)
-  Destination:       XLXI_1/XLXI_3/XLXI_94/State_22 (FF)
+Offset:              3.980ns (Levels of Logic = 4)
+  Source:            PS2_Data (PAD)
+  Destination:       XLXI_19/ByteRdy (FF)
   Destination Clock: Clk_50MHz rising
 
-  Data Path: BTN_SOUTH to XLXI_1/XLXI_3/XLXI_94/State_22
+  Data Path: PS2_Data to XLXI_19/ByteRdy
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           163   1.218   1.383  BTN_SOUTH_IBUF (BTN_SOUTH_IBUF)
-     begin scope: 'XLXI_1/XLXI_3'
-     LUT4_D:I1->LO         1   0.704   0.135  XLXI_94/State_mux0002<9>121 (N628)
-     LUT3:I2->O            4   0.704   0.762  XLXI_94/State_mux0002<9>151 (XLXI_94/N119)
-     LUT4:I0->O            1   0.704   0.000  XLXI_94/State_mux0002<9>1143_SW0_F (N543)
-     MUXF5:I0->O           1   0.321   0.424  XLXI_94/State_mux0002<9>1143_SW0 (N391)
-     LUT4:I3->O            1   0.704   0.000  XLXI_94/State_mux0002<9>11861 (XLXI_94/State_mux0002<9>1186)
-     FDS:D                     0.308          XLXI_94/State_22
+     IBUF:I->O             2   1.218   0.622  PS2_Data_IBUF (PS2_Data_IBUF)
+     begin scope: 'XLXI_19'
+     LUT2:I0->O            1   0.704   0.424  ByteRdy_and0000_SW0_SW0 (N6)
+     LUT4:I3->O            1   0.704   0.000  ByteRdy_and0000 (ByteRdy_and0000)
+     FDR:D                     0.308          ByteRdy
     ----------------------------------------
-    Total                      7.367ns (4.663ns logic, 2.704ns route)
-                                       (63.3% logic, 36.7% route)
+    Total                      3.980ns (2.934ns logic, 1.046ns route)
+                                       (73.7% logic, 26.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk_50MHz'
-  Total number of paths / destination ports: 35 / 12
+  Total number of paths / destination ports: 40 / 17
 -------------------------------------------------------------------------
 Offset:              7.533ns (Levels of Logic = 4)
   Source:            XLXI_1/XLXI_3/XLXI_96/I_Transc/State_3 (FF)
@@ -639,7 +646,7 @@ Delay:               7.263ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     BUFGP:I->O          942   1.457   1.410  Clk_50MHz_BUFGP (Clk_50MHz_BUFGP)
+     BUFGP:I->O          948   1.457   1.410  Clk_50MHz_BUFGP (Clk_50MHz_BUFGP)
      begin scope: 'XLXI_1/XLXI_21'
      INV:I->O              1   0.704   0.420  SPI_SCK1_INV_0 (SPI_SCK)
      end scope: 'XLXI_1/XLXI_21'
@@ -651,14 +658,14 @@ Delay:               7.263ns (Levels of Logic = 4)
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.22 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.07 secs
  
 --> 
 
-Total memory usage is 4564620 kilobytes
+Total memory usage is 4564624 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   31 (   0 filtered)
+Number of warnings :   20 (   0 filtered)
 Number of infos    :   17 (   0 filtered)
 

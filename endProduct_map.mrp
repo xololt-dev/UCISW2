@@ -9,32 +9,33 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Thu May 16 14:10:14 2024
+Mapped Date    : Tue Jun 11 12:37:40 2024
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    2
+Number of warnings:    1
 Logic Utilization:
-  Number of Slice Flip Flops:           881 out of   9,312    9%
-  Number of 4 input LUTs:             2,003 out of   9,312   21%
+  Number of Slice Flip Flops:           936 out of   9,312   10%
+  Number of 4 input LUTs:             2,057 out of   9,312   22%
 Logic Distribution:
-  Number of occupied Slices:          1,326 out of   4,656   28%
-    Number of Slices containing only related logic:   1,326 out of   1,326 100%
-    Number of Slices containing unrelated logic:          0 out of   1,326   0%
+  Number of occupied Slices:          1,381 out of   4,656   29%
+    Number of Slices containing only related logic:   1,381 out of   1,381 100%
+    Number of Slices containing unrelated logic:          0 out of   1,381   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       2,280 out of   9,312   24%
-    Number used as logic:             2,003
-    Number used as a route-thru:        277
+  Total Number of 4 input LUTs:       2,341 out of   9,312   25%
+    Number used as logic:             2,057
+    Number used as a route-thru:        284
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
-  Number of bonded IOBs:                 25 out of     232   10%
+  Number of bonded IOBs:                 31 out of     232   13%
+    IOB Flip Flops:                       1
   Number of RAMB16s:                      1 out of      20    5%
   Number of BUFGMUXs:                     1 out of      24    4%
 
-Average Fanout of Non-Clock Nets:                3.61
+Average Fanout of Non-Clock Nets:                3.58
 
 Peak Memory Usage:  4436 MB
 Total REAL time to MAP completion:  2 secs 
@@ -79,32 +80,35 @@ Section 1 - Errors
 
 Section 2 - Warnings
 --------------------
-WARNING:MapLib:701 - Signal PS2_Clk connected to top level port PS2_Clk has been
-   removed.
-WARNING:MapLib:701 - Signal PS2_Data connected to top level port PS2_Data has
-   been removed.
+WARNING:Pack:1186 - One or more I/O components have conflicting property values.
+    For each occurrence, the system will use the property value attached to the
+   pad.  Otherwise, the system will use the first property value read.  To view
+   each occurrence, create a detailed map report (run map using the -detail
+   option).
 
 Section 3 - Informational
 -------------------------
-INFO:LIT:243 - Logical network N49 has no load.
-INFO:LIT:395 - The above info message is repeated 11 more times for the
-   following (max. 5 shown):
-   N50,
-   N51,
-   N52,
+INFO:LIT:243 - Logical network N40 has no load.
+INFO:LIT:395 - The above info message is repeated 8 more times for the following
+   (max. 5 shown):
+   N41,
+   N42,
+   N43,
    XLXI_2/genIOBUF[0].instIOBUF/O,
    XLXI_2/genIOBUF[1].instIOBUF/O
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
+INFO:MapLib:159 - Net Timing constraints on signal Clk_50MHz are pushed forward
+   through input buffer.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
    can be dramatically reduced by designating them as fast outputs.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
- 132 block(s) removed
-  22 block(s) optimized away
- 132 signal(s) removed
+  13 block(s) removed
+  26 block(s) optimized away
+  15 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -119,312 +123,33 @@ To quickly locate the original cause for the removal of a chain of logic, look
 above the place where that logic is listed in the trimming report, then locate
 the lines that are least indented (begin at the leftmost edge).
 
+The signal "XLXI_34/XLXN_1" is sourceless and has been removed.
+The signal "XLXI_34/XLXN_2" is sourceless and has been removed.
 The signal "XLXI_2/genIOBUF[0].instIOBUF/O" is sourceless and has been removed.
 The signal "XLXI_2/genIOBUF[1].instIOBUF/O" is sourceless and has been removed.
 The signal "XLXI_2/genIOBUF[2].instIOBUF/O" is sourceless and has been removed.
 The signal "XLXI_19/E0" is sourceless and has been removed.
 The signal "XLXI_19/F0" is sourceless and has been removed.
-The signal "XLXI_19/DO_Rdy" is sourceless and has been removed.
-The signal "XLXI_19/DO<7>" is sourceless and has been removed.
- Sourceless block "XLXI_19/reg11b_7" (FF) removed.
-  The signal "XLXI_19/DO<6>" is sourceless and has been removed.
-   Sourceless block "XLXI_19/reg11b_6" (FF) removed.
-    The signal "XLXI_19/DO<5>" is sourceless and has been removed.
-     Sourceless block "XLXI_19/reg11b_5" (FF) removed.
-      The signal "XLXI_19/DO<4>" is sourceless and has been removed.
-       Sourceless block "XLXI_19/reg11b_4" (FF) removed.
-        The signal "XLXI_19/DO<3>" is sourceless and has been removed.
-         Sourceless block "XLXI_19/reg11b_3" (FF) removed.
-          The signal "XLXI_19/DO<2>" is sourceless and has been removed.
-           Sourceless block "XLXI_19/reg11b_2" (FF) removed.
-            The signal "XLXI_19/DO<1>" is sourceless and has been removed.
-             Sourceless block "XLXI_19/reg11b_1" (FF) removed.
-              The signal "XLXI_19/DO<0>" is sourceless and has been removed.
-               Sourceless block "XLXI_19/ByteRdy_and0000_SW0_SW0" (ROM) removed.
-                The signal "XLXI_19/N6" is sourceless and has been removed.
-                 Sourceless block "XLXI_19/ByteRdy_and0000" (ROM) removed.
-                  The signal "XLXI_19/ByteRdy_and0000" is sourceless and has been removed.
-                   Sourceless block "XLXI_19/ByteRdy" (SFF) removed.
-                    The signal "XLXI_19/ByteRdy" is sourceless and has been removed.
-                     Sourceless block "XLXI_19/E0" (FF) removed.
-                     Sourceless block "XLXI_19/F0" (FF) removed.
-                     Sourceless block "XLXI_19/iDO_Rdy1" (ROM) removed.
-                      The signal "XLXI_19/iDO_Rdy" is sourceless and has been removed.
-                       Sourceless block "XLXI_19/ResDORdy/DInToggle" (FF) removed.
-                        The signal "XLXI_19/ResDORdy/DInToggle" is sourceless and has been removed.
-                         Sourceless block "XLXI_19/ResDORdy/qDIn" (FF) removed.
-                          The signal "XLXI_19/ResDORdy/qDIn" is sourceless and has been removed.
-                           Sourceless block "XLXI_19/ResDORdy/prevDIn" (FF) removed.
-                            The signal "XLXI_19/ResDORdy/prevDIn" is sourceless and has been removed.
-                             Sourceless block "XLXI_19/ResDORdy/Mxor_DOut_Result1" (ROM) removed.
-                         Sourceless block "XLXI_19/ResDORdy/DInToggle_not00011_INV_0" (BUF) removed.
-                          The signal "XLXI_19/ResDORdy/DInToggle_not0001" is sourceless and has been
-removed.
-                     Sourceless block "XLXI_19/qF0_not00011" (ROM) removed.
-                      The signal "XLXI_19/qF0_not0001" is sourceless and has been removed.
-                       Sourceless block "XLXI_19/qF0" (FF) removed.
-                        The signal "XLXI_19/qF0" is sourceless and has been removed.
-                     Sourceless block "XLXI_19/qE0_not00011" (ROM) removed.
-                      The signal "XLXI_19/qE0_not0001" is sourceless and has been removed.
-                       Sourceless block "XLXI_19/qE0" (FF) removed.
-                        The signal "XLXI_19/qE0" is sourceless and has been removed.
-               Sourceless block "XLXI_19/DataE0_cmp_eq00001_SW0" (ROM) removed.
-                The signal "XLXI_19/DataE0_cmp_eq00001_SW0/O" is sourceless and has been
-removed.
-             Sourceless block "XLXI_19/Mxor_ByteRdy_xor0000_xo<4>1" (ROM) removed.
-              The signal "XLXI_19/Mxor_ByteRdy_xor0000_xo<4>" is sourceless and has been
-removed.
-       Sourceless block "XLXI_19/DataF0_cmp_eq00001" (ROM) removed.
-        The signal "XLXI_19/DataF0" is sourceless and has been removed.
-       Sourceless block "XLXI_19/DataE0_cmp_eq00002" (ROM) removed.
-        The signal "XLXI_19/DataE0" is sourceless and has been removed.
-       Sourceless block "XLXI_19/Mxor_ByteRdy_xor0000_xo<5>1" (ROM) removed.
-        The signal "XLXI_19/Mxor_ByteRdy_xor0000_xo<5>" is sourceless and has been
-removed.
-     Sourceless block "XLXI_19/DataE0_cmp_eq00001" (ROM) removed.
-      The signal "XLXI_19/N0" is sourceless and has been removed.
-The signal "XLXI_19/ByteRdy_not0001" is sourceless and has been removed.
-The signal "XLXI_19/PS_ClkHL" is sourceless and has been removed.
- Sourceless block "XLXI_19/reg11b_8" (FF) removed.
- Sourceless block "XLXI_19/reg11b_9" (FF) removed.
-  The signal "XLXI_19/reg11b<9>" is sourceless and has been removed.
- Sourceless block "XLXI_19/reg11b_10" (FF) removed.
-  The signal "XLXI_19/reg11b<10>" is sourceless and has been removed.
- Sourceless block "XLXI_19/cnt5b_0" (SFF) removed.
-  The signal "XLXI_19/cnt5b<0>" is sourceless and has been removed.
-   Sourceless block "XLXI_19/Mcount_cnt5b_xor<1>11" (ROM) removed.
-    The signal "XLXI_19/Result<1>" is sourceless and has been removed.
-     Sourceless block "XLXI_19/cnt5b_1" (SFF) removed.
-      The signal "XLXI_19/cnt5b<1>" is sourceless and has been removed.
-       Sourceless block "XLXI_19/Mcount_cnt5b_xor<2>11" (ROM) removed.
-        The signal "XLXI_19/Result<2>" is sourceless and has been removed.
-         Sourceless block "XLXI_19/cnt5b_2" (SFF) removed.
-          The signal "XLXI_19/cnt5b<2>" is sourceless and has been removed.
-           Sourceless block "XLXI_19/Mcount_cnt5b_cy<2>11" (ROM) removed.
-            The signal "XLXI_19/Mcount_cnt5b_cy<2>" is sourceless and has been removed.
-             Sourceless block "XLXI_19/Mcount_cnt5b_xor<4>11" (ROM) removed.
-              The signal "XLXI_19/Result<4>" is sourceless and has been removed.
-               Sourceless block "XLXI_19/cnt5b_4" (SFF) removed.
-                The signal "XLXI_19/cnt5b<4>" is sourceless and has been removed.
-                 Sourceless block "XLXI_19/cntMod11_or00007" (ROM) removed.
-                  The signal "XLXI_19/cntMod11_or00007/O" is sourceless and has been removed.
-           Sourceless block "XLXI_19/cntMod11_or00002" (ROM) removed.
-            The signal "XLXI_19/cntMod11_or00002" is sourceless and has been removed.
-           Sourceless block "XLXI_19/Mcount_cnt5b_xor<3>11" (ROM) removed.
-            The signal "XLXI_19/Result<3>" is sourceless and has been removed.
-             Sourceless block "XLXI_19/cnt5b_3" (SFF) removed.
-              The signal "XLXI_19/cnt5b<3>" is sourceless and has been removed.
-   Sourceless block "XLXI_19/Mcount_cnt5b_xor<0>11_INV_0" (BUF) removed.
-    The signal "XLXI_19/Result<0>" is sourceless and has been removed.
- Sourceless block "XLXI_19/cntMod11_0" (SFF) removed.
-  The signal "XLXI_19/cntMod11<0>" is sourceless and has been removed.
-   Sourceless block "XLXI_19/Mcount_cntMod11_xor<1>11" (ROM) removed.
-    The signal "XLXI_19/Result<1>2" is sourceless and has been removed.
-     Sourceless block "XLXI_19/cntMod11_1" (SFF) removed.
-      The signal "XLXI_19/cntMod11<1>" is sourceless and has been removed.
-       Sourceless block "XLXI_19/Mcount_cntMod11_xor<2>11" (ROM) removed.
-        The signal "XLXI_19/Result<2>2" is sourceless and has been removed.
-         Sourceless block "XLXI_19/cntMod11_2" (SFF) removed.
-          The signal "XLXI_19/cntMod11<2>" is sourceless and has been removed.
-           Sourceless block "XLXI_19/Mcount_cntMod11_xor<3>11" (ROM) removed.
-            The signal "XLXI_19/Result<3>2" is sourceless and has been removed.
-             Sourceless block "XLXI_19/cntMod11_3" (SFF) removed.
-              The signal "XLXI_19/cntMod11<3>" is sourceless and has been removed.
-               Sourceless block "XLXI_19/ByteRdy_cmp_eq00001" (ROM) removed.
-                The signal "XLXI_19/ByteRdy_cmp_eq0000" is sourceless and has been removed.
-                 Sourceless block "XLXI_19/cntMod11_or000016" (ROM) removed.
-                  The signal "XLXI_19/cntMod11_or0000" is sourceless and has been removed.
-   Sourceless block "XLXI_19/Mcount_cntMod11_xor<0>11_INV_0" (BUF) removed.
-    The signal "XLXI_19/Result<0>2" is sourceless and has been removed.
-The signal "XLXI_19/PS_Samp" is sourceless and has been removed.
- Sourceless block "XLXI_19/qPS_Clk" (FF) removed.
-  The signal "XLXI_19/qPS_Clk" is sourceless and has been removed.
-   Sourceless block "XLXI_19/qPS_Clk_Prev" (FF) removed.
-    The signal "XLXI_19/qPS_Clk_Prev" is sourceless and has been removed.
-     Sourceless block "XLXI_19/PS_ClkHL_and00001" (ROM) removed.
-     Sourceless block "XLXI_19/ByteRdy_not00011" (ROM) removed.
-The signal "XLXI_19/N2" is sourceless and has been removed.
- Sourceless block "XLXI_19/Mcount_cnt8b_cy<0>" (MUX) removed.
-  The signal "XLXI_19/Mcount_cnt8b_cy<0>" is sourceless and has been removed.
-   Sourceless block "XLXI_19/Mcount_cnt8b_cy<1>" (MUX) removed.
-    The signal "XLXI_19/Mcount_cnt8b_cy<1>" is sourceless and has been removed.
-     Sourceless block "XLXI_19/Mcount_cnt8b_cy<2>" (MUX) removed.
-      The signal "XLXI_19/Mcount_cnt8b_cy<2>" is sourceless and has been removed.
-       Sourceless block "XLXI_19/Mcount_cnt8b_cy<3>" (MUX) removed.
-        The signal "XLXI_19/Mcount_cnt8b_cy<3>" is sourceless and has been removed.
-         Sourceless block "XLXI_19/Mcount_cnt8b_cy<4>" (MUX) removed.
-          The signal "XLXI_19/Mcount_cnt8b_cy<4>" is sourceless and has been removed.
-           Sourceless block "XLXI_19/Mcount_cnt8b_cy<5>" (MUX) removed.
-            The signal "XLXI_19/Mcount_cnt8b_cy<5>" is sourceless and has been removed.
-             Sourceless block "XLXI_19/Mcount_cnt8b_cy<6>" (MUX) removed.
-              The signal "XLXI_19/Mcount_cnt8b_cy<6>" is sourceless and has been removed.
-               Sourceless block "XLXI_19/Mcount_cnt8b_xor<7>" (XOR) removed.
-                The signal "XLXI_19/Result<7>" is sourceless and has been removed.
-                 Sourceless block "XLXI_19/cnt8b_7" (FF) removed.
-                  The signal "XLXI_19/cnt8b<7>" is sourceless and has been removed.
-                   Sourceless block "XLXI_19/PS_Samp_cmp_eq00009" (ROM) removed.
-                    The signal "XLXI_19/PS_Samp_cmp_eq00009" is sourceless and has been removed.
-                     Sourceless block "XLXI_19/PS_Samp_cmp_eq000010" (ROM) removed.
-                   Sourceless block "XLXI_19/Mcount_cnt8b_xor<7>_rt" (ROM) removed.
-                    The signal "XLXI_19/Mcount_cnt8b_xor<7>_rt" is sourceless and has been removed.
-             Sourceless block "XLXI_19/Mcount_cnt8b_xor<6>" (XOR) removed.
-              The signal "XLXI_19/Result<6>" is sourceless and has been removed.
-               Sourceless block "XLXI_19/cnt8b_6" (FF) removed.
-                The signal "XLXI_19/cnt8b<6>" is sourceless and has been removed.
-                 Sourceless block "XLXI_19/Mcount_cnt8b_cy<6>_rt" (ROM) removed.
-                  The signal "XLXI_19/Mcount_cnt8b_cy<6>_rt" is sourceless and has been removed.
-           Sourceless block "XLXI_19/Mcount_cnt8b_xor<5>" (XOR) removed.
-            The signal "XLXI_19/Result<5>" is sourceless and has been removed.
-             Sourceless block "XLXI_19/cnt8b_5" (FF) removed.
-              The signal "XLXI_19/cnt8b<5>" is sourceless and has been removed.
-               Sourceless block "XLXI_19/Mcount_cnt8b_cy<5>_rt" (ROM) removed.
-                The signal "XLXI_19/Mcount_cnt8b_cy<5>_rt" is sourceless and has been removed.
-         Sourceless block "XLXI_19/Mcount_cnt8b_xor<4>" (XOR) removed.
-          The signal "XLXI_19/Result<4>1" is sourceless and has been removed.
-           Sourceless block "XLXI_19/cnt8b_4" (FF) removed.
-            The signal "XLXI_19/cnt8b<4>" is sourceless and has been removed.
-             Sourceless block "XLXI_19/Mcount_cnt8b_cy<4>_rt" (ROM) removed.
-              The signal "XLXI_19/Mcount_cnt8b_cy<4>_rt" is sourceless and has been removed.
-       Sourceless block "XLXI_19/Mcount_cnt8b_xor<3>" (XOR) removed.
-        The signal "XLXI_19/Result<3>1" is sourceless and has been removed.
-         Sourceless block "XLXI_19/cnt8b_3" (FF) removed.
-          The signal "XLXI_19/cnt8b<3>" is sourceless and has been removed.
-           Sourceless block "XLXI_19/Mcount_cnt8b_cy<3>_rt" (ROM) removed.
-            The signal "XLXI_19/Mcount_cnt8b_cy<3>_rt" is sourceless and has been removed.
-           Sourceless block "XLXI_19/PS_Samp_cmp_eq00004" (ROM) removed.
-            The signal "XLXI_19/PS_Samp_cmp_eq00004/O" is sourceless and has been removed.
-     Sourceless block "XLXI_19/Mcount_cnt8b_xor<2>" (XOR) removed.
-      The signal "XLXI_19/Result<2>1" is sourceless and has been removed.
-       Sourceless block "XLXI_19/cnt8b_2" (FF) removed.
-        The signal "XLXI_19/cnt8b<2>" is sourceless and has been removed.
-         Sourceless block "XLXI_19/Mcount_cnt8b_cy<2>_rt" (ROM) removed.
-          The signal "XLXI_19/Mcount_cnt8b_cy<2>_rt" is sourceless and has been removed.
-   Sourceless block "XLXI_19/Mcount_cnt8b_xor<1>" (XOR) removed.
-    The signal "XLXI_19/Result<1>1" is sourceless and has been removed.
-     Sourceless block "XLXI_19/cnt8b_1" (FF) removed.
-      The signal "XLXI_19/cnt8b<1>" is sourceless and has been removed.
-       Sourceless block "XLXI_19/Mcount_cnt8b_cy<1>_rt" (ROM) removed.
-        The signal "XLXI_19/Mcount_cnt8b_cy<1>_rt" is sourceless and has been removed.
- Sourceless block "XLXI_19/Mcount_cnt8b_xor<0>" (XOR) removed.
-  The signal "XLXI_19/Result<0>1" is sourceless and has been removed.
-   Sourceless block "XLXI_19/cnt8b_0" (FF) removed.
-    The signal "XLXI_19/cnt8b<0>" is sourceless and has been removed.
-     Sourceless block "XLXI_19/Mcount_cnt8b_lut<0>_INV_0" (BUF) removed.
-      The signal "XLXI_19/Mcount_cnt8b_lut<0>" is sourceless and has been removed.
-The signal "XLXI_19/N3" is sourceless and has been removed.
-The signal "XLXI_1/XLXI_3/XLXI_94/Error<1>" is sourceless and has been removed.
-The signal "XLXI_1/XLXI_3/XLXI_94/Error<0>" is sourceless and has been removed.
-The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DIn_SR<1>" is sourceless and has
-been removed.
- Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DIn_SR_0" (FF) removed.
-  The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DIn_SR<0>" is sourceless and has
-been removed.
-   Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DInToggle_cmp_eq00001" (ROM)
-removed.
-    The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DInToggle_cmp_eq0000" is sourceless
-and has been removed.
-     Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DInToggle" (FF) removed.
-      The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DInToggle" is sourceless and has
-been removed.
-       Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DInToggle_SR_1" (FF) removed.
-        The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DInToggle_SR<1>" is sourceless and
-has been removed.
-         Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DInToggle_SR_0" (FF) removed.
-          The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DInToggle_SR<0>" is sourceless and
-has been removed.
-           Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/Mxor_DOut_Result1" (ROM)
-removed.
-            The signal "XLXI_1/XLXI_3/XLXI_94/s_eRdr" is sourceless and has been removed.
-             Sourceless block "XLXI_1/XLXI_3/XLXI_94/Error_not00011" (ROM) removed.
-              The signal "XLXI_1/XLXI_3/XLXI_94/Error_not0001" is sourceless and has been
-removed.
-               Sourceless block "XLXI_1/XLXI_3/XLXI_94/Error_1" (SFF) removed.
-               Sourceless block "XLXI_1/XLXI_3/XLXI_94/Error_0" (SFF) removed.
-           Sourceless block "XLXI_1/XLXI_3/XLXI_94/Error_mux0000<1>1" (ROM) removed.
-            The signal "XLXI_1/XLXI_3/XLXI_94/Error_mux0000<1>" is sourceless and has been
-removed.
-           Sourceless block "XLXI_1/XLXI_3/XLXI_94/Error_mux0000<0>1" (ROM) removed.
-            The signal "XLXI_1/XLXI_3/XLXI_94/Error_mux0000<0>" is sourceless and has been
-removed.
-       Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DInToggle_not00011_INV_0"
-(BUF) removed.
-        The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DInToggle_not0001" is sourceless
-and has been removed.
-The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DIn_SR<1>" is sourceless and has
-been removed.
- Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DIn_SR_0" (FF) removed.
-  The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DIn_SR<0>" is sourceless and has
-been removed.
-   Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DInToggle_cmp_eq00001" (ROM)
-removed.
-    The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DInToggle_cmp_eq0000" is sourceless
-and has been removed.
-     Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DInToggle" (FF) removed.
-      The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DInToggle" is sourceless and has
-been removed.
-       Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DInToggle_SR_1" (FF) removed.
-        The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DInToggle_SR<1>" is sourceless and
-has been removed.
-         Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DInToggle_SR_0" (FF) removed.
-          The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DInToggle_SR<0>" is sourceless and
-has been removed.
-           Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/Mxor_DOut_Result1" (ROM)
-removed.
-            The signal "XLXI_1/XLXI_3/XLXI_94/s_eFmt" is sourceless and has been removed.
-       Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DInToggle_not00011_INV_0"
-(BUF) removed.
-        The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DInToggle_not0001" is sourceless
-and has been removed.
-The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DIn_SR<1>" is sourceless and has
-been removed.
- Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DIn_SR_0" (FF) removed.
-  The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DIn_SR<0>" is sourceless and has
-been removed.
-   Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DInToggle_cmp_eq00001" (ROM)
-removed.
-    The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DInToggle_cmp_eq0000" is sourceless
-and has been removed.
-     Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DInToggle" (FF) removed.
-      The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DInToggle" is sourceless and has
-been removed.
-       Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DInToggle_SR_1" (FF) removed.
-        The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DInToggle_SR<1>" is sourceless and
-has been removed.
-         Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DInToggle_SR_0" (FF) removed.
-          The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DInToggle_SR<0>" is sourceless and
-has been removed.
-       Sourceless block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DInToggle_not00011_INV_0"
-(BUF) removed.
-        The signal "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DInToggle_not0001" is sourceless
-and has been removed.
-The signal "XLXI_1/XLXI_3/XLXI_94/Error_or0000" is sourceless and has been
-removed.
+The signal "XLXI_19/qF0_not0001" is sourceless and has been removed.
+ Sourceless block "XLXI_19/qF0" (FF) removed.
+  The signal "XLXI_19/qF0" is sourceless and has been removed.
+   Sourceless block "XLXI_19/F0" (FF) removed.
+The signal "XLXI_19/DataF0" is sourceless and has been removed.
+The signal "XLXI_19/qE0_not0001" is sourceless and has been removed.
+ Sourceless block "XLXI_19/qE0" (FF) removed.
+  The signal "XLXI_19/qE0" is sourceless and has been removed.
+   Sourceless block "XLXI_19/E0" (FF) removed.
+The signal "XLXI_19/DataE0" is sourceless and has been removed.
 The signal "XLXI_1/XLXI_3/XLXI_94/NextState_cmp_ne000826/O" is sourceless and
 has been removed.
 The signal "XLXI_1/XLXI_3/XLXI_94/NextState_cmp_ne000939_SW0/O" is sourceless
 and has been removed.
-
-The trimmed logic reported below is either:
-   1. part of a cycle
-   2. part of disabled logic
-   3. a side-effect of other trimmed logic
-
-The signal "PS2_Clk" is unused and has been removed.
- Unused block "PS2_Clk" (PAD) removed.
-The signal "PS2_Clk_IBUF" is unused and has been removed.
- Unused block "PS2_Clk_IBUF" (BUF) removed.
-The signal "PS2_Data" is unused and has been removed.
- Unused block "PS2_Data" (PAD) removed.
-The signal "PS2_Data_IBUF" is unused and has been removed.
- Unused block "PS2_Data_IBUF" (BUF) removed.
-Unused block "XLXI_1/XLXI_3/XLXI_94/Error_or00001" (ROM) removed.
 Unused block "XLXI_1/XLXI_3/XLXI_94/NextState_cmp_ne000826" (ROM) removed.
 Unused block "XLXI_1/XLXI_3/XLXI_94/NextState_cmp_ne000939_SW0" (ROM) removed.
-Unused block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFNF/DIn_SR_1" (FF) removed.
-Unused block "XLXI_1/XLXI_3/XLXI_94/Res_ErrFmt/DIn_SR_1" (FF) removed.
-Unused block "XLXI_1/XLXI_3/XLXI_94/Res_ErrRdr/DIn_SR_1" (FF) removed.
-Unused block "XLXI_19/XST_GND" (ZERO) removed.
-Unused block "XLXI_19/XST_VCC" (ONE) removed.
+Unused block "XLXI_19/DataE0_cmp_eq00002" (ROM) removed.
+Unused block "XLXI_19/DataF0_cmp_eq00001" (ROM) removed.
+Unused block "XLXI_19/qE0_not00011" (ROM) removed.
+Unused block "XLXI_19/qF0_not00011" (ROM) removed.
 Unused block "XLXI_2/genIOBUF[0].instIOBUF/IBUF" (BUF) removed.
 Unused block "XLXI_2/genIOBUF[1].instIOBUF/IBUF" (BUF) removed.
 Unused block "XLXI_2/genIOBUF[2].instIOBUF/IBUF" (BUF) removed.
@@ -448,6 +173,8 @@ LUT4 		XLXI_1/XLXI_3/XLXI_94/NextState_cmp_ne000949
 GND 		XLXI_1/XLXI_3/XST_GND
 VCC 		XLXI_1/XLXI_3/XST_VCC
 VCC 		XLXI_1/XLXI_6
+GND 		XLXI_19/XST_GND
+VCC 		XLXI_19/XST_VCC
 LUT3 		XLXI_2/Mmux_Blank_mux0000_5
    optimized to 0
 LUT3 		XLXI_2/Mmux_Blank_mux0000_6
@@ -466,6 +193,8 @@ LUT3 		XLXI_2/Mmux_Blank_mux0000_8
    optimized to 0
 GND 		XLXI_2/XST_GND
 VCC 		XLXI_2/XST_VCC
+VCC 		XLXI_34/I_36_26
+GND 		XLXI_34/I_36_29
 GND 		XST_GND
 
 To enable printing of redundant blocks removed and signals merged, set the
@@ -478,31 +207,37 @@ Section 6 - IOB Properties
 | IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| AD_CONV                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| AMP_CS                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| BTN_EAST                           | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
-| BTN_SOUTH                          | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
-| BTN_WEST                           | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
-| Clk_50MHz                          | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
-| DAC_CLR                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| DAC_CS                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| FPGA_INIT_B                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| LCD_D<0>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| LCD_D<1>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| LCD_D<2>                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| LCD_D<3>                           | IOB              | BIDIR     | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| LCD_E                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| LCD_RS                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| LCD_RW                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| SDC_MISO                           | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
-| SDC_MOSI                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| SDC_SCK                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| SDC_SS                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| SF_CE                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| SPI_MISO                           | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
-| SPI_MOSI                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| SPI_SCK                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
-| SPI_SS_B                           | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| AD_CONV                            | IOB              | OUTPUT    | LVCMOS33             |       | 6        | SLOW |              |          | 0 / 0    |
+| AMP_CS                             | IOB              | OUTPUT    | LVCMOS33             |       | 6        | SLOW |              |          | 0 / 0    |
+| BTN_EAST                           | IBUF             | INPUT     | LVTTL                |       |          |      |              | PULLDOWN | 0 / 0    |
+| BTN_SOUTH                          | IBUF             | INPUT     | LVTTL                |       |          |      | IFF1         | PULLDOWN | 0 / 3    |
+| Clk_50MHz                          | IBUF             | INPUT     | LVTTL                |       |          |      |              |          | 0 / 0    |
+| DAC_CLR                            | IOB              | OUTPUT    | LVCMOS33             |       | 8        | SLOW |              |          | 0 / 0    |
+| DAC_CS                             | IOB              | OUTPUT    | LVCMOS33             |       | 8        | SLOW |              |          | 0 / 0    |
+| DO<0>                              | IOB              | OUTPUT    | LVTTL                |       | 4        | SLOW |              |          | 0 / 0    |
+| DO<1>                              | IOB              | OUTPUT    | LVTTL                |       | 4        | SLOW |              |          | 0 / 0    |
+| DO<2>                              | IOB              | OUTPUT    | LVTTL                |       | 4        | SLOW |              |          | 0 / 0    |
+| DO<3>                              | IOB              | OUTPUT    | LVTTL                |       | 4        | SLOW |              |          | 0 / 0    |
+| DO<4>                              | IOB              | OUTPUT    | LVTTL                |       | 4        | SLOW |              |          | 0 / 0    |
+| FPGA_INIT_B                        | IOB              | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          | 0 / 0    |
+| LCD_D<0>                           | IOB              | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          | 0 / 0    |
+| LCD_D<1>                           | IOB              | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          | 0 / 0    |
+| LCD_D<2>                           | IOB              | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          | 0 / 0    |
+| LCD_D<3>                           | IOB              | BIDIR     | LVCMOS33             |       | 4        | SLOW |              |          | 0 / 0    |
+| LCD_E                              | IOB              | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          | 0 / 0    |
+| LCD_RS                             | IOB              | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          | 0 / 0    |
+| LCD_RW                             | IOB              | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          | 0 / 0    |
+| PS2_Clk                            | IBUF             | INPUT     | LVCMOS33             |       |          |      |              |          | 0 / 0    |
+| PS2_Data                           | IBUF             | INPUT     | LVCMOS33             |       |          |      |              |          | 0 / 0    |
+| SDC_MISO                           | IBUF             | INPUT     | LVTTL                |       |          |      |              |          | 0 / 0    |
+| SDC_MOSI                           | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          | 0 / 0    |
+| SDC_SCK                            | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          | 0 / 0    |
+| SDC_SS                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          | 0 / 0    |
+| SF_CE                              | IOB              | OUTPUT    | LVCMOS33             |       | 4        | SLOW |              |          | 0 / 0    |
+| SPI_MISO                           | IBUF             | INPUT     | LVCMOS33             |       |          |      |              |          | 0 / 0    |
+| SPI_MOSI                           | IOB              | OUTPUT    | LVCMOS33             |       | 6        | SLOW |              |          | 0 / 0    |
+| SPI_SCK                            | IOB              | OUTPUT    | LVCMOS33             |       | 6        | SLOW |              |          | 0 / 0    |
+| SPI_SS_B                           | IOB              | OUTPUT    | LVCMOS33             |       | 6        | SLOW |              |          | 0 / 0    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Section 7 - RPMs

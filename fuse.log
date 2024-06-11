@@ -1,19 +1,37 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/registerTest_isim_beh.exe -prj C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/registerTest_beh.prj work.registerTest 
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct_isim_beh.exe -prj C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct_beh.prj work.endProduct 
 ISim P.20131013 (signature 0x7708f090)
 Number of CPUs detected in this system: 12
 Turning on mult-threading, number of parallel sub-compilation jobs: 24 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/register.vhd" into library work
-Parsing VHDL file "C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/registerTest.vhd" into library work
+Parsing VHDL file "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/register.vhd" into library work
+Parsing VHDL file "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/WAV_reader.vhf" into library work
+Parsing VHDL file "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/fileNameReader.vhd" into library work
+Parsing VHDL file "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" into library work
 Starting static elaboration
+WARNING:HDLCompiler:89 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 216: <sdc_filereader> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 240: <dacwrite> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 426: <lcd1x64> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 437: <ps2_kbd> remains a black-box since it has no binding entity.
 Completed static elaboration
+WARNING:Simulator:648 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 216. Instance sdc_filereader is unbound
+WARNING:Simulator:648 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 240. Instance dacwrite is unbound
+WARNING:Simulator:648 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 426. Instance lcd1x64 is unbound
+WARNING:Simulator:648 - "C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct.vhf" Line 437. Instance ps2_kbd is unbound
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
+Compiling package vcomponents
+Compiling architecture vcc_v of entity VCC [vcc_default]
 Compiling architecture behavioral of entity naszregister [naszregister_default]
-Compiling architecture behavior of entity registertest
+Compiling architecture behavioral of entity WAV_reader_MUSER_endProduct [wav_reader_muser_endproduct_defa...]
+Compiling architecture fdce_v of entity FDCE [\FDCE('0')\]
+Compiling architecture behavioral of entity FD8CE_MXILINX_endProduct [fd8ce_mxilinx_endproduct_default]
+Compiling architecture behavioral of entity fileNameReader [filenamereader_default]
+Compiling architecture fd_v of entity FD [\FD('0')\]
+Compiling architecture behavioral of entity endproduct
 Time Resolution for simulation is 1ps.
-Compiled 6 VHDL Units
-Built simulation executable C:/XilinxPrj/UCISW2-main-newer/UCISW2-main-newer/registerTest_isim_beh.exe
-Fuse Memory Usage: 36336 KB
-Fuse CPU Usage: 311 ms
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 19 VHDL Units
+Built simulation executable C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/endProduct_isim_beh.exe
+Fuse Memory Usage: 50504 KB
+Fuse CPU Usage: 437 ms

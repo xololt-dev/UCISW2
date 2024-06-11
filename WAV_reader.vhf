@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : WAV_reader.vhf
--- /___/   /\     Timestamp : 05/16/2024 14:03:36
+-- /___/   /\     Timestamp : 06/11/2024 12:07:53
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl C:/XilinxPrj/UCISW2-main-newer/WAV_reader.vhf -w C:/XilinxPrj/UCISW2-main-newer/WAV_reader.sch
+--Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/WAV_reader.vhf -w C:/XilinxPrj/UCISW2-main-newer1106/UCISW2-main-newer/WAV_reader.sch
 --Design Name: WAV_reader
 --Device: spartan3e
 --Purpose:
@@ -35,6 +35,7 @@ entity WAV_reader is
           Start       : in    std_logic; 
           AD_CONV     : out   std_logic; 
           AMP_CS      : out   std_logic; 
+          Busy        : out   std_logic; 
           DAC_CLR     : out   std_logic; 
           DAC_CS      : out   std_logic; 
           FPGA_INIT_B : out   std_logic; 
@@ -60,7 +61,7 @@ architecture BEHAVIORAL of WAV_reader is
    signal XLXN_93     : std_logic;
    signal XLXN_95     : std_logic;
    signal XLXN_104    : std_logic;
-   signal XLXN_106    : std_logic;
+   signal Busy_DUMMY  : std_logic;
    component SDC_FileReader
       port ( SDC_MISO  : in    std_logic; 
              Start     : in    std_logic; 
@@ -126,6 +127,7 @@ architecture BEHAVIORAL of WAV_reader is
    end component;
    
 begin
+   Busy <= Busy_DUMMY;
    XLXI_3 : SDC_FileReader
       port map (Abort=>Abort,
                 Clk_Sys=>Clk_50MHz,
@@ -136,7 +138,7 @@ begin
                 Reset=>Reset,
                 SDC_MISO=>SDC_MISO,
                 Start=>Start,
-                Busy=>XLXN_106,
+                Busy=>Busy_DUMMY,
                 DO(7 downto 0)=>XLXN_85(7 downto 0),
                 DO_Rdy=>XLXN_84,
                 Error(1 downto 0)=>OutputLED(1 downto 0),
@@ -171,7 +173,7 @@ begin
                 SPI_SS_B=>SPI_SS_B);
    
    XLXI_24 : naszregister
-      port map (Busy=>XLXN_106,
+      port map (Busy=>Busy_DUMMY,
                 Clk_50MHz=>Clk_50MHz,
                 DAC_Busy=>XLXN_95,
                 DO(7 downto 0)=>XLXN_85(7 downto 0),
